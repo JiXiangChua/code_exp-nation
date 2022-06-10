@@ -5,16 +5,28 @@ import EventsStack from "./EventsStack";
 
 const Tab = createBottomTabNavigator();
 
-const MainTabNavigator = () => {
+const MainTabNavigator = ({ navigation }) => {
   return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
       }}
     >
-      <Tab.Screen name="HomeStack" component={HomeStack} />
-      <Tab.Screen name="InboxStack" component={InboxStack} />
-      <Tab.Screen name="EventsStack" component={EventsStack} />
+      <Tab.Screen
+        name="InboxStack"
+        component={InboxStack}
+        options={{ title: "Inbox" }}
+      />
+      <Tab.Screen
+        name="HomeStack"
+        component={HomeStack}
+        options={{ title: "My Card" }}
+      />
+      <Tab.Screen
+        name="EventsStack"
+        component={EventsStack}
+        options={{ title: "Events" }}
+      />
     </Tab.Navigator>
   );
 };
