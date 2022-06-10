@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeStack from "./HomeStack";
-import Inbox from "../screens/inbox/Inbox";
-import Events from "../screens/event/Events";
+import InboxStack from "./InboxStack";
+import EventsStack from "./EventsStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -13,8 +13,8 @@ const MainTabNavigator = () => {
       }}
     >
       <Tab.Screen name="HomeStack" component={HomeStack} />
-      <Tab.Screen name="Inbox" component={Inbox} />
-      <Tab.Screen name="Events" component={Events} />
+      <Tab.Screen name="InboxStack" component={InboxStack} />
+      <Tab.Screen name="EventsStack" component={EventsStack} />
     </Tab.Navigator>
   );
 };
