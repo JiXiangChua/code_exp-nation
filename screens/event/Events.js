@@ -1,9 +1,13 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
 
-const Events = () => {
+const Events = ({ navigation }) => {
   return (
     <View>
       <Text>This is an Events screen</Text>
+      <Button
+        title="Go to rewards"
+        onPress={() => navigation.navigate("Rewards")}
+      />
     </View>
   );
 };
