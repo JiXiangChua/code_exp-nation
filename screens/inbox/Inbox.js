@@ -1,9 +1,10 @@
 import { View, Text, StyleSheet } from "react-native";
+import globalStyle from "../../constants/globalStyle";
 
 const Inbox = () => {
   return (
     <View>
-      <Text>This is an annoucement screen</Text>
+      <Text style={globalStyle.header1}>This is an annoucement screen</Text>
     </View>
   );
 };
