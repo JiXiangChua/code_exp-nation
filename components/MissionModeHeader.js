@@ -1,9 +1,10 @@
 import { useContext, useEffect } from "react";
-import { View, Switch, StyleSheet } from "react-native";
+import { View, Switch, StyleSheet, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { MissionContext } from "../store/context/mission-context";
 
 import color from "../constants/color";
+import globalStyle from "../constants/globalStyle";
 
 const MissionModeHeader = () => {
   const { isMissionMode, setMissionMode } = useContext(MissionContext);
@@ -24,6 +25,7 @@ const MissionModeHeader = () => {
 
   return (
     <View style={styles.missionContainer}>
+      <Text style={[globalStyle.body1, styles.label]}>MISSION MODE</Text>
       <Switch
         trackColor={{ false: color.Grey300, true: color.Emerald }}
         thumbColor={isMissionMode ? color.Black : color.White}
@@ -40,11 +42,15 @@ export default MissionModeHeader;
 const styles = StyleSheet.create({
   missionContainer: {
     height: 40,
-    backgroundColor: "yellow",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+  label: {
+    fontSize: 12,
   },
   switch: {
-    alignSelf: "flex-end",
-    marginHorizontal: 20,
+    marginRight: 20,
     transform: [{ scaleX: 0.8 }, { scaleY: 0.7 }],
   },
 });
