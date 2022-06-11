@@ -6,7 +6,12 @@ const Stack = createStackNavigator();
 
 const EventsStack = () => {
   return (
-    <Stack.Navigator initialRouteName="Events">
+    <Stack.Navigator
+      initialRouteName="Events"
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Stack.Screen name="Events" component={Events} />
       <Stack.Screen name="Rewards" component={Rewards} />
     </Stack.Navigator>
