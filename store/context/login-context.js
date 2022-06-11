@@ -4,14 +4,19 @@ export const LoginContext = createContext({
   //initial state for auto completion
   isLogin: false,
   setIsLogin: () => {},
+  userProfile: {},
+  setUserProfile: () => {},
 });
 
 const LoginContextProvider = (props) => {
   const [isLogin, setIsLogin] = useState(false);
+  const [user, setUser] = useState({});
 
   const loginValue = {
     isLogin: isLogin,
     setIsLogin: setIsLogin,
+    userProfile: user,
+    setUserProfile: setUser,
   };
 
   return (

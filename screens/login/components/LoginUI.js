@@ -12,7 +12,7 @@ import FaceIdButton from "../../../components/FaceIdButton";
 const LoginButtonImage = require("../../../assets/images/SingpassLogin.png");
 
 const LoginUI = (props) => {
-  const { setIsLogin } = useContext(LoginContext);
+  const { setIsLogin, setUserProfile } = useContext(LoginContext);
 
   function login() {
     (async () => {
@@ -22,6 +22,7 @@ const LoginUI = (props) => {
         const json = await singpassAPI();
         if (json.status == "OK") {
           setIsLogin(true);
+          setUserProfile(json.data); //store the user profile from singpass API to a global state
         }
       } catch (error) {
         //handle error and inform user the authentication from singpass fails.
