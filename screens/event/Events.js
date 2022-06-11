@@ -1,15 +1,5 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  Button,
-  SafeAreaView,
-  FlatList,
-  ScrollView,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import CompletedButton from "./Components/CompletedButton";
-import color from "../../constants/color";
 import globalStyle from "../../constants/globalStyle";
 import NavigationHeader from "../../components/NavigationHeader";
 
@@ -28,7 +18,9 @@ const Events = ({ navigation }) => {
           onPress={() => navigation.navigate("Rewards")}
         />
         <View style={styles.buttonContainer}>
-          <CompletedButton />
+          <CompletedButton
+            onPress={() => navigation.navigate("CompletedEvents")}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
