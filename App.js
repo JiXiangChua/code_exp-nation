@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import RootStackNavigator from "./navigation/RootStackNavigator";
 import { useFonts } from "expo-font";
 import LoginContextProvider from "./store/context/login-context";
+import MissionContextProvider from "./store/context/mission-context";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -21,7 +22,9 @@ export default function App() {
     <>
       <StatusBar style="auto" />
       <LoginContextProvider>
-        <RootStackNavigator />
+        <MissionContextProvider>
+          <RootStackNavigator />
+        </MissionContextProvider>
       </LoginContextProvider>
     </>
   );
