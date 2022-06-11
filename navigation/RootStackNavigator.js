@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { LoginContext } from "../store/context/login-context";
 import Login from "../screens/login/Login";
 import MainTabNavigator from "./MainTabNavigator";
 import MissionHome from "../screens/mission/home/MissionHome";
@@ -9,8 +10,10 @@ const Stack = createStackNavigator();
 
 const RootStackNavigator = () => {
   //FOR NOW WITHOUT CONTEXT
-  const [isLogin, setIsLogin] = useState(true);
   const [isMissionMode, setIsMissionMode] = useState(false);
+
+  //using Context API
+  const { isLogin } = useContext(LoginContext);
 
   return (
     <NavigationContainer>
