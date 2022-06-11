@@ -1,15 +1,31 @@
-import { useState, useEffect, useContext } from "react";
-import { View, Text, StyleSheet, SafeAreaView, Switch } from "react-native";
+import { useContext } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  ScrollView,
+  Platform,
+  Dimensions,
+} from "react-native";
 import FontAwesomeIconButton from "../../components/FontAwesomeIconButton";
 import { LoginContext } from "../../store/context/login-context";
 
 import globalStyle from "../../constants/globalStyle";
 import color from "../../constants/color";
 import MissionModeHeader from "../../components/MissionModeHeader";
+import IdentityCard from "./components/IdentityCard";
+import Barcode from "./components/Barcode";
+
+const SPACING_FOR_CARD_INSET = Dimensions.get("window").width * 0.1 - 10;
 
 const Home = () => {
   const { userProfile } = useContext(LoginContext);
-  const { name } = userProfile;
+  const { name, licenses } = userProfile;
+
+  const showBarcodeHandler = () => {
+    //TODO
+  };
 
   return (
     <SafeAreaView
@@ -31,7 +47,36 @@ const Home = () => {
           />
         </View>
       </View>
-      <View style={styles.cardContainer}>{/* For ID card and Bar code */}</View>
+      <View style={styles.cardContainer}>
+        <View style={styles.cardScrollContainer}>
+          <ScrollView
+            horizontal
+            pagingEnabled
+            showsHorizontalScrollIndicator={false}
+            decelerationRate={0}
+            snapToInterval={345} //your element width + marginLeft and marginRight
+            snapToAlignment="center"
+            contentInset={{
+              // iOS ONLY
+              top: 0,
+              left: SPACING_FOR_CARD_INSET, // Left spacing for the very first card
+              bottom: 0,
+              right: SPACING_FOR_CARD_INSET, // Right spacing for the very last card
+            }}
+            contentContainerStyle={{
+              // contentInset alternative for Android
+              paddingHorizontal:
+                Platform.OS === "android" ? SPACING_FOR_CARD_INSET : 0, // Horizontal spacing before and after the ScrollView
+            }}
+          >
+            {licenses &&
+              licenses.map((license) => {
+                return <IdentityCard key={license.type} details={license} />;
+              })}
+          </ScrollView>
+        </View>
+        <Barcode onPress={showBarcodeHandler} />
+      </View>
     </SafeAreaView>
   );
 };
@@ -41,6 +86,7 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: color.OffWhite,
   },
   headerContainer: {
     flex: 2,
@@ -61,6 +107,9 @@ const styles = StyleSheet.create({
   },
   cardContainer: {
     flex: 9,
-    backgroundColor: "red",
+    alignItems: "center",
+  },
+  cardScrollContainer: {
+    width: "100%",
   },
 });
