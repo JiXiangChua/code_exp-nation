@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import globalStyle from "../constants/globalStyle";
 import color from "../constants/color";
 import IconButton from "./IconButton";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const NavigationHeader = (props) => {
   return (
@@ -10,17 +11,21 @@ const NavigationHeader = (props) => {
         {props.title}
       </Text>
       {props.iconName && (
-        <IconButton
-          name={props.iconName}
-          size={props.iconSize}
-          color={props.iconColor}
-        />
+        <TouchableOpacity onPress={props.onPress}>
+          <IconButton
+            name={props.iconName}
+            size={props.iconSize}
+            color={props.iconColor}
+          />
+        </TouchableOpacity>
       )}
-      {props.imageName && (
-        <Image
-          source={props.image}
-          style={{ width: props.iconSize, height: props.iconSize }}
-        />
+      {props.image && (
+        <TouchableOpacity onPress={props.onPress}>
+          <Image
+            source={props.image}
+            style={{ width: props.iconSize, height: props.iconSize }}
+          />
+        </TouchableOpacity>
       )}
     </View>
   );
