@@ -1,4 +1,7 @@
 import { View, Text, StyleSheet, Image } from "react-native";
+import globalStyle from "../constants/globalStyle";
+import color from "../constants/color";
+import IconButton from "./IconButton";
 
 const NavigationHeader = (props) => {
   return (
