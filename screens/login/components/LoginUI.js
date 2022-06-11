@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { View, Text, StyleSheet, SafeAreaView } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
 import { LoginContext } from "../../../store/context/login-context";
 
 import globalStyle from "../../../constants/globalStyle";
 import color from "../../../constants/color";
 import { singpassAPI } from "../../../helper/singpassAPI";
+import FontAwesomeIconButton from "../../../components/FontAwesomeIconButton";
 import LoginButton from "./LoginButton";
 import FaceIdButton from "../../../components/FaceIdButton";
 
@@ -33,7 +33,11 @@ const LoginUI = (props) => {
     <SafeAreaView style={props.style}>
       <View style={styles.appNameContainer}>
         <Text style={[globalStyle.header2, styles.appName]}>Nation</Text>
-        <FontAwesome name="user-circle-o" size={70} color={color.Yellow} />
+        <FontAwesomeIconButton
+          name="user-circle-o"
+          size={70}
+          color={color.Yellow}
+        />
       </View>
       <View style={styles.loginContainer}>
         <LoginButton

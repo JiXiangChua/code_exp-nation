@@ -1,5 +1,4 @@
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
-import color from "../constants/color";
 import { Ionicons } from "@expo/vector-icons";
 
 const IconButton = (props) => {
