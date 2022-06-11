@@ -9,6 +9,12 @@ import MissionHome from "../screens/mission/home/MissionHome";
 
 const Stack = createStackNavigator();
 
+const forFade = ({ current }) => ({
+  cardStyle: {
+    opacity: current.progress,
+  },
+});
+
 const RootStackNavigator = () => {
   //using Context API
   const { isLogin } = useContext(LoginContext);
@@ -25,7 +31,13 @@ const RootStackNavigator = () => {
         {isLogin && isMissionMode && (
           <Stack.Screen name="Mission" component={MissionHome} />
         )}
-        {isLogin && <Stack.Screen name="Main" component={MainTabNavigator} />}
+        {isLogin && (
+          <Stack.Screen
+            name="Main"
+            component={MainTabNavigator}
+            options={{ cardStyleInterpolator: forFade }}
+          />
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   );
