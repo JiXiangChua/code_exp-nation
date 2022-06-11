@@ -8,6 +8,7 @@ const Tab = createBottomTabNavigator();
 const MainTabNavigator = ({ navigation }) => {
   return (
     <Tab.Navigator
+      initialRouteName="HomeStack"
       screenOptions={{
         headerShown: false,
       }}
