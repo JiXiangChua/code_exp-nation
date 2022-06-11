@@ -9,9 +9,13 @@ export const MissionContext = createContext({
 const MissionContextProvider = (props) => {
   const [isMission, setIsMission] = useState(false);
 
+  const setMissionMode = () => {
+    setIsMission((prevState) => !prevState);
+  };
+
   const missionValue = {
     isMissionMode: isMission,
-    setMissionMode: setIsMission,
+    setMissionMode: setMissionMode,
   };
 
   return (

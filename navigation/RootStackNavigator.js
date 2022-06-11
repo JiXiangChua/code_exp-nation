@@ -29,7 +29,11 @@ const RootStackNavigator = () => {
       >
         {!isLogin && <Stack.Screen name="Login" component={Login} />}
         {isLogin && isMissionMode && (
-          <Stack.Screen name="Mission" component={MissionHome} />
+          <Stack.Screen
+            name="Mission"
+            component={MissionHome}
+            options={{ cardStyleInterpolator: forFade }}
+          />
         )}
         {isLogin && (
           <Stack.Screen

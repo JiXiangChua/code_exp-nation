@@ -1,10 +1,12 @@
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
+import MissionModeHeader from "../../../components/MissionModeHeader";
 
 const MissionHome = () => {
   return (
-    <View>
+    <SafeAreaView>
+      <MissionModeHeader />
       <Text>This is a Mission Home screen</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 
