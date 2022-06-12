@@ -25,10 +25,11 @@ const MissionModeHeader = () => {
 
   return (
     <View style={styles.missionContainer}>
-      <Text style={[globalStyle.body1, styles.label]}>MISSION MODE</Text>
+      <Text style={[globalStyle.header4, styles.label]}>MISSION MODE</Text>
       <Switch
-        trackColor={{ false: color.Grey300, true: color.Emerald }}
+        trackColor={{ false: color.Grey400, true: color.White }}
         thumbColor={isMissionMode ? color.Black : color.White}
+        ios_backgroundColor={color.Grey400}
         value={isMissionMode}
         onValueChange={toggleMissionMode}
         style={styles.switch}
@@ -41,16 +42,20 @@ export default MissionModeHeader;
 
 const styles = StyleSheet.create({
   missionContainer: {
-    height: 40,
     flexDirection: "row",
-    justifyContent: "flex-end",
+    justifyContent: "space-between",
     alignItems: "center",
+    alignSelf: "center",
+    width: "90%",
+    height: 70,
+    paddingHorizontal: 20,
+    backgroundColor: color.Emerald,
+    borderRadius: 20,
   },
   label: {
-    fontSize: 12,
+    color: color.White,
   },
   switch: {
-    marginRight: 20,
-    transform: [{ scaleX: 0.8 }, { scaleY: 0.7 }],
+    transform: [{ scaleX: 1 }, { scaleY: 1 }],
   },
 });

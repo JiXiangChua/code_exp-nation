@@ -31,7 +31,6 @@ const Home = () => {
     <SafeAreaView
       style={[globalStyle.androidNavigationTitle, styles.container]}
     >
-      <MissionModeHeader />
       <View style={styles.headerContainer}>
         <View style={styles.titleContainer}>
           <Text style={[globalStyle.body1, styles.titleText]}>
@@ -46,6 +45,9 @@ const Home = () => {
             color={color.Black}
           />
         </View>
+      </View>
+      <View style={styles.missionContainer}>
+        <MissionModeHeader />
       </View>
       <View style={styles.cardContainer}>
         <View style={styles.cardScrollContainer}>
@@ -89,9 +91,10 @@ const styles = StyleSheet.create({
     backgroundColor: color.OffWhite,
   },
   headerContainer: {
-    flex: 2,
+    flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
     marginHorizontal: 20,
   },
   titleContainer: {
@@ -104,6 +107,11 @@ const styles = StyleSheet.create({
   settingButtonContainer: {
     flex: 1,
     alignItems: "flex-end",
+  },
+  missionContainer: {
+    flex: 2,
+    justifyContent: "center",
+    alignItems: "center",
   },
   cardContainer: {
     flex: 9,
