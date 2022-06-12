@@ -70,19 +70,19 @@ const mockUserProfile = {
       id: "2",
       title: "IPPT",
       content: "01 / 05 / 2023 - 31 / 05 / 2023",
-      imageBackground: require("../assets/images/events-combatshoot.png"),
+      imageBackground: require("../assets/images/events-ippt.png"),
     },
     {
       id: "3",
       title: "Exercise Wallaby ",
       content: "22 / 09/ 2023 - 21 / 10 / 2023",
-      imageBackground: require("../assets/images/events-combatshoot.png"),
+      imageBackground: require("../assets/images/events-wallaby.png"),
     },
     {
       id: "4",
       title: "Outfield",
       content: "3 Days (TBC)",
-      imageBackground: require("../assets/images/events-combatshoot.png"),
+      imageBackground: require("../assets/images/events-outfield.png"),
     },
   ],
 };

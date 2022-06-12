@@ -13,7 +13,7 @@ import color from "../../../constants/color";
 import globalStyle from "../../../constants/globalStyle";
 
 const Item = ({ item, onPress }) => (
-  <TouchableOpacity onPress={onPress} style={[styles.item]}>
+  <TouchableOpacity onPress={onPress} style={[styles.item, styles.shadowProp]}>
     <View style={styles.overlay}>
       <Image source={item.imageBackground} />
     </View>
@@ -52,6 +52,8 @@ const styles = StyleSheet.create({
   },
   overlay: {
     zindex: 1,
+    position: "absolute",
+    opacity: 0.6,
   },
   cardtextContainer: {
     zindex: 2,
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 50,
     marginVertical: 8,
-    marginHorizontal: 16,
+    marginHorizontal: 22,
     borderRadius: 20,
     flexRight: 10,
     borderColor: color.Black,
@@ -70,5 +72,11 @@ const styles = StyleSheet.create({
   textStyle: {
     marginLeft: 20,
     color: color.OffWhite,
+  },
+  shadowProp: {
+    elevation: 10,
+    shadowColor: color.Black,
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
   },
 });
