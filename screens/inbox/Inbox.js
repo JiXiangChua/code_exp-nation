@@ -1,5 +1,11 @@
-import { useState, useContext, useEffect } from "react";
-import { StyleSheet, TextInput, SafeAreaView, FlatList } from "react-native";
+import { useState, useContext } from "react";
+import {
+  StyleSheet,
+  TextInput,
+  SafeAreaView,
+  FlatList,
+  Platform,
+} from "react-native";
 import { LoginContext } from "../../store/context/login-context";
 import globalStyle from "../../constants/globalStyle";
 import color from "../../constants/color";
@@ -20,6 +26,7 @@ const Inbox = () => {
   const { userProfile } = useContext(LoginContext);
   const { mails } = userProfile;
   const [filterStatus, setFilterStatus] = useState(false); //false - show all mail, true - show unread only
+  const [showSearchBar, setShowSearchBar] = useState(false);
 
   const setFilterStatusHandler = (status) => {
     setFilterStatus(status);
@@ -42,12 +49,21 @@ const Inbox = () => {
         iconName="search-outline"
         iconSize={30}
         iconColor={color.Grey500}
+        onPress={() => setShowSearchBar((prevState) => !prevState)}
       />
 
-      <TextInput
-        style={[globalStyle.header3, styles.textInput]}
-        placeholder="Search"
-      ></TextInput>
+      {showSearchBar && (
+        <TextInput
+          style={[globalStyle.header4, styles.textInput]}
+          placeholder="Search"
+          autoCorrect={false}
+          autoCapitalize="none"
+          keyboardType={Platform.OS === "ios" ? "web-search" : "default"}
+          onEndEditing={() => {
+            setShowSearchBar(false);
+          }}
+        ></TextInput>
+      )}
 
       <FilterTab array={filterTab} onChangeStatus={setFilterStatusHandler} />
       <FlatList
