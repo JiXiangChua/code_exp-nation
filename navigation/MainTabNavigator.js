@@ -18,15 +18,11 @@ const MainTabNavigator = ({ navigation }) => {
           let iconName;
 
           if (route.name === "InboxStack") {
-            iconName = focused
-              ? "ios-notifications"
-              : "ios-notifications-outline";
+            iconName = focused ? "mail" : "mail-outline";
           } else if (route.name === "HomeStack") {
             iconName = focused ? "card" : "card-outline";
           } else if (route.name === "EventsStack") {
-            iconName = focused
-              ? "star-box-multiple"
-              : "star-box-multiple-outline";
+            iconName = focused ? "calendar-month" : "calendar-month-outline";
             return (
               <MaterialCommunityIcons
                 name={iconName}
@@ -45,7 +41,10 @@ const MainTabNavigator = ({ navigation }) => {
       <Tab.Screen
         name="InboxStack"
         component={InboxStack}
-        options={{ title: "Inbox" }}
+        options={{
+          title: "Inbox",
+          tabBarBadge: 1,
+        }}
       />
       <Tab.Screen
         name="HomeStack"
