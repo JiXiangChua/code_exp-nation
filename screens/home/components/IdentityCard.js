@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowOffset: { width: 4, height: 4 },
     shadowRadius: 3,
+    elevation: 3,
   },
   card: {
     flexDirection: "row",
