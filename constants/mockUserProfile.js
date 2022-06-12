@@ -33,6 +33,22 @@ const mockUserProfile = {
       ],
     },
   ],
+  mail: [
+    {
+      sender: "3SG JACOB TAY",
+      status: false,
+      caption: "Routine Order for 15 June 2022",
+      message: "Placeholder",
+      date: "Sun Jun 15 2022 21:00:00 GMT+0800",
+    },
+    {
+      sender: "2SG YI HENG",
+      status: false,
+      caption: "Packing List",
+      message: "Placeholder ",
+      date: "Sun Jun 12 2022 16:54:21 GMT+0800",
+    },
+  ],
 };
 
 export default mockUserProfile;
