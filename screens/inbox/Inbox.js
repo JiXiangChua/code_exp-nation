@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { StyleSheet, TextInput, SafeAreaView } from "react-native";
+import { StyleSheet, TextInput, SafeAreaView, FlatList } from "react-native";
 import { LoginContext } from "../../store/context/login-context";
 import globalStyle from "../../constants/globalStyle";
 import color from "../../constants/color";
@@ -18,8 +18,8 @@ const filterTab = [
 
 const Inbox = () => {
   const { userProfile } = useContext(LoginContext);
-  const mails = userProfile.mail;
-  console.log(mails);
+  const { mail: mails } = userProfile;
+
   return (
     <SafeAreaView
       style={[globalStyle.androidNavigationTitle, styles.container]}
@@ -37,8 +37,16 @@ const Inbox = () => {
       ></TextInput>
 
       <FilterTab array={filterTab} />
-
-      <MailCard />
+      {userProfile && (
+        <FlatList
+          data={mails}
+          renderItem={(mail) => {
+            return <MailCard sender={mail.sender} caption={mail.caption} />;
+          }}
+          keyExtractor={(mail) => mail.id}
+        />
+      )}
+      {/* <MailCard /> */}
     </SafeAreaView>
   );
 };
