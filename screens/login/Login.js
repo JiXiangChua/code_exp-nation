@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { View, Text, StyleSheet, Button, Image } from "react-native";
 import { LoginContext } from "../../store/context/login-context";
 import color from "../../constants/color";
+import globalStyle from "../../constants/globalStyle";
 
 import LoginUI from "./components/LoginUI";
 
@@ -14,13 +15,14 @@ const Login = () => {
 
   return (
     <View style={styles.viewContainer}>
-      {/* <Text>This is a login screen</Text>
-      <Button title="Login" onPress={loginUser} /> */}
-      <Image
-        source={require("../../assets/images/login-background.png")}
-        style={styles.backgroundImage}
-      />
-      <View style={styles.overlayDarkener} />
+      <View style={styles.titleContainer}>
+        <Image
+          source={require("../../assets/images/login-image.png")}
+          style={styles.backgroundImage}
+        />
+        {/* <View style={styles.overlayDarkener} /> */}
+        <Text style={[globalStyle.header1, styles.appName]}>NATIONLAH</Text>
+      </View>
       <LoginUI style={styles.loginUI} />
     </View>
   );
@@ -31,8 +33,11 @@ export default Login;
 const styles = StyleSheet.create({
   viewContainer: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
+  },
+  titleContainer: {
+    flex: 1,
+    justifyContent: "flex-end",
   },
   overlayDarkener: {
     flex: 1,
@@ -44,14 +49,16 @@ const styles = StyleSheet.create({
     opacity: 0.3,
   },
   backgroundImage: {
-    width: "100%",
-    height: "100%",
-    zIndex: 1,
+    transform: [{ scale: 0.8 }],
+  },
+  appName: {
+    color: color.Emerald,
+    alignSelf: "center",
+    letterSpacing: 4,
   },
   loginUI: {
-    position: "absolute",
-    zIndex: 3,
-    width: "100%",
-    height: "100%",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "flex-start",
   },
 });

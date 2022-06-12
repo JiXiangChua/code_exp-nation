@@ -1,15 +1,10 @@
 import { useContext } from "react";
-import { View, Text, StyleSheet, SafeAreaView } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { LoginContext } from "../../../store/context/login-context";
 
-import globalStyle from "../../../constants/globalStyle";
-import color from "../../../constants/color";
 import { singpassAPI } from "../../../helper/singpassAPI";
-import FontAwesomeIconButton from "../../../components/FontAwesomeIconButton";
 import LoginButton from "./LoginButton";
 import FaceIdButton from "../../../components/FaceIdButton";
-
-const LoginButtonImage = require("../../../assets/images/SingpassLogin.png");
 
 const LoginUI = (props) => {
   const { setIsLogin, setUserProfile } = useContext(LoginContext);
@@ -31,45 +26,30 @@ const LoginUI = (props) => {
   }
 
   return (
-    <SafeAreaView style={props.style}>
-      <View style={styles.appNameContainer}>
-        <Text style={[globalStyle.header2, styles.appName]}>Nation</Text>
-        <FontAwesomeIconButton
-          name="user-circle-o"
-          size={70}
-          color={color.Yellow}
-        />
+    <View style={props.style}>
+      <View style={styles.buttonContainer}>
+        <LoginButton title={"Log In with Singpass"} onPress={login} />
       </View>
-      <View style={styles.loginContainer}>
-        <LoginButton
-          image={LoginButtonImage}
-          onPress={login}
-          style={styles.loginButton}
-        />
-        <FaceIdButton theme="Dark" />
+      <View style={styles.faceIdContainer}>
+        <FaceIdButton theme="Light" />
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
 export default LoginUI;
 
 const styles = StyleSheet.create({
-  appNameContainer: {
+  buttonContainer: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center",
+    marginTop: 30,
   },
-  appName: {
-    color: color.Yellow,
-    alignSelf: "center",
-    marginBottom: 20,
-  },
-  loginContainer: {
+  faceIdContainer: {
     flex: 1,
+    justifyContent: "flex-end",
     alignItems: "center",
-  },
-  loginButton: {
-    marginTop: 80,
+    marginBottom: 50,
   },
 });

@@ -9,7 +9,7 @@ const FaceIdButton = (props) => {
     console.log("Face Id button pressed!");
   }
   return (
-    <TouchableOpacity onPress={faceIdHandler}>
+    <TouchableOpacity onPress={faceIdHandler} style={props.style}>
       <Image
         source={props.theme == "Dark" ? faceIdIconWhite : faceIdIcon}
         style={styles.image}
@@ -24,6 +24,5 @@ const styles = StyleSheet.create({
   image: {
     width: 40,
     height: 40,
-    marginTop: 10,
   },
 });
