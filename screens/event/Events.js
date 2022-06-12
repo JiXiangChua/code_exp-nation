@@ -36,10 +36,4 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  buttonContainer: {
-    flexDirection: "row",
-    justifyContent: "flex-end",
-    marginTop: 10,
-    marginRight: 20,
-  },
 });

@@ -13,13 +13,11 @@ import color from "../../../constants/color";
 import globalStyle from "../../../constants/globalStyle";
 
 const Item = ({ item, onPress }) => (
-  <TouchableOpacity onPress={onPress} style={[styles.item, styles.shadowProp]}>
-    <View style={styles.overlay}>
-      <Image source={item.imageBackground} />
-    </View>
+  <TouchableOpacity onPress={onPress} style={[styles.item, styles.dropShadow]}>
+    <Image source={item.imageBackground} />
     <View style={styles.cardtextContainer}>
-      <Text style={[globalStyle.header2, styles.textStyle]}>{item.title}</Text>
-      <Text style={[globalStyle.body1, styles.textStyle]}>{item.content}</Text>
+      <Text style={[globalStyle.header2]}>{item.title}</Text>
+      <Text style={[globalStyle.body1]}>{item.content}</Text>
     </View>
   </TouchableOpacity>
 );
@@ -50,33 +48,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  overlay: {
-    zindex: 1,
-    position: "absolute",
-    opacity: 0.6,
-  },
   cardtextContainer: {
-    zindex: 2,
+    marginLeft: 20,
+    color: color.Black,
   },
   item: {
-    backgroundColor: color.Grey500,
-    paddingTop: 20,
-    paddingBottom: 50,
+    backgroundColor: color.Grey200,
+    paddingBottom: 10,
     marginVertical: 8,
-    marginHorizontal: 22,
-    borderRadius: 20,
-    flexRight: 10,
+    marginHorizontal: 21.5,
+    borderRadius: 10,
     borderColor: color.Black,
     borderWidth: 1,
   },
-  textStyle: {
-    marginLeft: 20,
-    color: color.OffWhite,
-  },
-  shadowProp: {
-    elevation: 10,
-    shadowColor: color.Black,
-    shadowOpacity: 0.5,
-    shadowRadius: 5,
+  dropShadow: {
+    shadowColor: "black",
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 4, height: 4 },
+    shadowRadius: 3,
   },
 });
