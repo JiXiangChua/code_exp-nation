@@ -4,7 +4,10 @@ const mockUserProfile = {
   licenses: [
     {
       type: "Identity",
-      profileImage: null,
+      colors: ["#AAE2B5", "#42A155"],
+      profileImage: {
+        uri: "https://media-exp1.licdn.com/dms/image/C5103AQFX0NZg12DPyw/profile-displayphoto-shrink_200_200/0/1583392874484?e=1660780800&v=beta&t=FgQRlkspZZn3kMsO8YX1bC6J1VUwVdP9D-6YOBsTJMg",
+      },
       info: [
         {
           "NRIC Number": "S****123Z",
@@ -13,7 +16,10 @@ const mockUserProfile = {
     },
     {
       type: "Driving License",
-      profileImage: null,
+      colors: ["#C3E1EB", "#59A3BC"],
+      profileImage: {
+        uri: "https://media-exp1.licdn.com/dms/image/C5103AQFX0NZg12DPyw/profile-displayphoto-shrink_200_200/0/1583392874484?e=1660780800&v=beta&t=FgQRlkspZZn3kMsO8YX1bC6J1VUwVdP9D-6YOBsTJMg",
+      },
       info: [
         {
           "Permit Number": "SAF/TPT/B/01234/10",
