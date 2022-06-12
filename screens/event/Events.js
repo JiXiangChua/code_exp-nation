@@ -24,7 +24,7 @@ const Events = ({ navigation }) => {
         iconSize={30}
         onPress={() => navigation.navigate("Rewards")}
       />
-      <FilterTab array={filterTabArray} />
+      <FilterTab array={filterTabArray} onChangeStatus={(state) => {}} />
       <EventsCard />
     </SafeAreaView>
   );
