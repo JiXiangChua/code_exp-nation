@@ -4,17 +4,19 @@ import {
   StyleSheet,
   TextInput,
   SafeAreaView,
-  Platform,
   TouchableOpacity,
-  Button,
 } from "react-native";
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import globalStyle from "../../constants/globalStyle";
 import IconButton from "../../components/IconButton";
 import color from "../../constants/color";
 import NavigationHeader from "../../components/NavigationHeader";
 
 const Inbox = () => {
+  const [status, setStatus] = useState("All");
+  const setStatusFilter = (status) => {
+    setStatus(status);
+  };
   return (
     <SafeAreaView
       style={[globalStyle.androidNavigationTitle, styles.container]}
@@ -30,13 +32,21 @@ const Inbox = () => {
         style={[globalStyle.header3, styles.textInput]}
         placeholder="Search"
       ></TextInput>
+
       <View style={styles.filterContainer}>
-        <TouchableOpacity style={styles.filterONButton}>
-          <Text style={[globalStyle.body2, styles.buttonText]}>All</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.filterOFFButton}>
-          <Text style={[globalStyle.body2, styles.buttonText]}>Unread</Text>
-        </TouchableOpacity>
+        {filterTab.map((e) => (
+          <TouchableOpacity
+            key={e.status}
+            style={[
+              globalStyle.body2Bold,
+              styles.filterOFFButton,
+              status === e.status && styles.filterONButton,
+            ]}
+            onPress={() => setStatusFilter(e.status)}
+          >
+            <Text>{e.status}</Text>
+          </TouchableOpacity>
+        ))}
       </View>
     </SafeAreaView>
   );
@@ -44,45 +54,44 @@ const Inbox = () => {
 
 export default Inbox;
 
+const filterTab = [
+  {
+    status: "All",
+  },
+  {
+    status: "Unread",
+  },
+];
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  titleContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginHorizontal: 10, //to change to a component later
+    backgroundColor: color.OffWhite,
   },
   filterContainer: {
     flexDirection: "row",
+    padding: 10,
   },
   textInput: {
     margin: 10,
     borderWidth: 1,
     borderRadius: 10,
     padding: 5,
+    borderWidth: 1,
     borderColor: color.Black,
-  },
-  buttonText: {
-    textAlign: "center",
   },
   filterONButton: {
+    width: "50%",
+    flexDirection: "row",
     justifyContent: "center",
-    marginHorizontal: 10,
-    width: 76,
-    height: 29,
-    borderWidth: 1,
-    borderRadius: 10,
-    borderColor: color.Black,
-    backgroundColor: color.Yellow,
+    borderBottomColor: color.Emerald,
+    borderBottomWidth: 5,
   },
   filterOFFButton: {
+    width: "50%",
+    flexDirection: "row",
     justifyContent: "center",
-    marginHorizontal: 10,
-    width: 76,
-    height: 29,
-    borderWidth: 1,
-    borderRadius: 10,
-    borderColor: color.Black,
+    borderBottomColor: color.Black,
+    borderBottomWidth: 1,
   },
 });

@@ -50,7 +50,7 @@ const globalStyle = StyleSheet.create({
     fontSize: 10,
   },
   androidNavigationTitle: {
-    marginTop: Platform.OS === "android" ? 50 : 0,
+    paddingTop: Platform.OS === "android" ? 50 : 0,
   },
 });
 
