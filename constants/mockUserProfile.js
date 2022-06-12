@@ -35,6 +35,7 @@ const mockUserProfile = {
   ],
   mail: [
     {
+      id: "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed",
       sender: "3SG JACOB TAY",
       status: false,
       caption: "Routine Order for 15 June 2022",
@@ -42,6 +43,7 @@ const mockUserProfile = {
       date: "Sun Jun 15 2022 21:00:00 GMT+0800",
     },
     {
+      id: "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bzx",
       sender: "2SG YI HENG",
       status: false,
       caption: "Packing List",
