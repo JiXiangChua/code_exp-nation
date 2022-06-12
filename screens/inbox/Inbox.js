@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { StyleSheet, TextInput, SafeAreaView, FlatList } from "react-native";
 import { LoginContext } from "../../store/context/login-context";
 import globalStyle from "../../constants/globalStyle";
@@ -19,6 +19,19 @@ const filterTab = [
 const Inbox = () => {
   const { userProfile } = useContext(LoginContext);
   const { mails } = userProfile;
+  const [filterStatus, setFilterStatus] = useState(false); //false - show all mail, true - show unread only
+
+  const setFilterStatusHandler = (status) => {
+    setFilterStatus(status);
+  };
+
+  let filteredMails = mails;
+
+  if (filterStatus) {
+    filteredMails = mails.filter((mail) => {
+      return mail.status === false;
+    });
+  }
 
   return (
     <SafeAreaView
@@ -36,9 +49,9 @@ const Inbox = () => {
         placeholder="Search"
       ></TextInput>
 
-      <FilterTab array={filterTab} />
+      <FilterTab array={filterTab} onChangeStatus={setFilterStatusHandler} />
       <FlatList
-        data={mails}
+        data={filteredMails}
         renderItem={(itemData) => {
           return (
             <MailCard

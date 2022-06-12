@@ -4,11 +4,17 @@ import globalStyle from "../constants/globalStyle";
 import color from "../constants/color";
 
 const FilterTab = (props) => {
-  const { array } = props;
+  const { array, onChangeStatus } = props;
 
   const [status, setStatus] = useState(array[0].status);
   const setStatusFilter = (status) => {
     setStatus(status);
+    if (status === array[0].status) {
+      //In Inbox screen, All represents false and Unread represents true state.
+      onChangeStatus(false); //show all
+    } else {
+      onChangeStatus(true); //show filtered condition elements
+    }
   };
 
   return (
