@@ -8,9 +8,9 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import globalStyle from "../../constants/globalStyle";
-import IconButton from "../../components/IconButton";
 import color from "../../constants/color";
 import NavigationHeader from "../../components/NavigationHeader";
+import MailCard from "./components/MailCard";
 
 const Inbox = () => {
   const [status, setStatus] = useState("All");
@@ -48,6 +48,8 @@ const Inbox = () => {
           </TouchableOpacity>
         ))}
       </View>
+
+      <MailCard />
     </SafeAreaView>
   );
 };
