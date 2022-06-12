@@ -2,7 +2,6 @@ import { View, Text, StyleSheet } from "react-native";
 import globalStyle from "../../../constants/globalStyle";
 
 const MailCard = (props) => {
-  console.log(props);
   return (
     <View style={styles.announcementContainer}>
       <Text>{props.sender}</Text>

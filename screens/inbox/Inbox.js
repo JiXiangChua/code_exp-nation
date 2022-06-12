@@ -18,7 +18,7 @@ const filterTab = [
 
 const Inbox = () => {
   const { userProfile } = useContext(LoginContext);
-  const { mail: mails } = userProfile;
+  const { mails } = userProfile;
 
   return (
     <SafeAreaView
@@ -37,16 +37,21 @@ const Inbox = () => {
       ></TextInput>
 
       <FilterTab array={filterTab} />
-      {userProfile && (
-        <FlatList
-          data={mails}
-          renderItem={(mail) => {
-            return <MailCard sender={mail.sender} caption={mail.caption} />;
-          }}
-          keyExtractor={(mail) => mail.id}
-        />
-      )}
-      {/* <MailCard /> */}
+      <FlatList
+        data={mails}
+        renderItem={(itemData) => {
+          return (
+            <MailCard
+              sender={itemData.item.sender}
+              status={itemData.item.status}
+              caption={itemData.item.caption}
+              message={itemData.item.message}
+              date={itemData.item.date}
+            />
+          );
+        }}
+        keyExtractor={(mail) => mail.id}
+      />
     </SafeAreaView>
   );
 };
