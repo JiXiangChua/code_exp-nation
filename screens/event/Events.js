@@ -1,28 +1,31 @@
 import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
-import CompletedButton from "./Components/CompletedButton";
 import globalStyle from "../../constants/globalStyle";
 import NavigationHeader from "../../components/NavigationHeader";
+import FilterTab from "../../components/FilterTab";
+import EventCard from "./components/EventCard";
 
-const RewardsButtonImage = require("../../assets/icons/rewardsButton.png");
+const filterTabArray = [
+  {
+    status: "Ongoing",
+  },
+  {
+    status: "Completed",
+  },
+];
 
 const Events = ({ navigation }) => {
   return (
     <SafeAreaView
       style={[globalStyle.androidNavigationTitle, styles.container]}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <NavigationHeader
-          title="Events"
-          image={RewardsButtonImage}
-          iconSize={30}
-          onPress={() => navigation.navigate("Rewards")}
-        />
-        <View style={styles.buttonContainer}>
-          <CompletedButton
-            onPress={() => navigation.navigate("CompletedEvents")}
-          />
-        </View>
-      </ScrollView>
+      <NavigationHeader
+        title="Events"
+        iconName="md-gift"
+        iconSize={30}
+        onPress={() => navigation.navigate("Rewards")}
+      />
+      <FilterTab array={filterTabArray} />
+      <EventCard />
     </SafeAreaView>
   );
 };
