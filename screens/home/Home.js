@@ -33,10 +33,10 @@ const Home = () => {
     >
       <View style={styles.headerContainer}>
         <View style={styles.titleContainer}>
-          <Text style={[globalStyle.body1, styles.titleText]}>
+          <Text style={[globalStyle.body1Bold, styles.welcomeText]}>
             Welcome back,
           </Text>
-          <Text style={[globalStyle.header2, styles.titleText]}>{name}</Text>
+          <Text style={[globalStyle.header2, styles.nameText]}>{name}</Text>
         </View>
         <View style={styles.settingButtonContainer}>
           <FontAwesomeIconButton
@@ -101,7 +101,10 @@ const styles = StyleSheet.create({
     flex: 3,
     flexDirection: "column",
   },
-  titleText: {
+  welcomeText: {
+    color: color.Black,
+  },
+  nameText: {
     color: color.Emerald,
   },
   settingButtonContainer: {
