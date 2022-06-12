@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { StyleSheet, TextInput, SafeAreaView } from "react-native";
+import { LoginContext } from "../../store/context/login-context";
 import globalStyle from "../../constants/globalStyle";
 import color from "../../constants/color";
 import NavigationHeader from "../../components/NavigationHeader";
@@ -15,6 +17,9 @@ const filterTab = [
 ];
 
 const Inbox = () => {
+  const { userProfile } = useContext(LoginContext);
+  const mails = userProfile.mail;
+  console.log(mails);
   return (
     <SafeAreaView
       style={[globalStyle.androidNavigationTitle, styles.container]}
