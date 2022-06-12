@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {
   SafeAreaView,
   View,
@@ -8,37 +8,9 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
+import { LoginContext } from "../../../store/context/login-context";
 import color from "../../../constants/color";
 import globalStyle from "../../../constants/globalStyle";
-
-//const imageBackground = require("../../../assets/images/events-combatshoot.png");
-
-const DATA = [
-  {
-    id: "1",
-    title: "Combat Shoot",
-    content: "31 / 01 / 2023 - 15 / 01 / 2023",
-    imageBackground: require("../../../assets/images/events-combatshoot.png"),
-  },
-  {
-    id: "2",
-    title: "IPPT",
-    content: "01 / 05 / 2023 - 31 / 05 / 2023",
-    imageBackground: require("../../../assets/images/events-combatshoot.png"),
-  },
-  {
-    id: "3",
-    title: "Exercise Wallaby ",
-    content: "22 / 09/ 2023 - 21 / 10 / 2023",
-    imageBackground: require("../../../assets/images/events-combatshoot.png"),
-  },
-  {
-    id: "4",
-    title: "Outfield",
-    content: "3 Days (TBC)",
-    imageBackground: require("../../../assets/images/events-combatshoot.png"),
-  },
-];
 
 const Item = ({ item, onPress }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item]}>
@@ -53,6 +25,8 @@ const Item = ({ item, onPress }) => (
 );
 
 const EventCard = () => {
+  const { userProfile } = useContext(LoginContext);
+  const { events } = userProfile;
   const [selectedId, setSelectedId] = useState(null);
 
   const renderItem = ({ item }) => {
@@ -62,7 +36,7 @@ const EventCard = () => {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={DATA}
+        data={events}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
