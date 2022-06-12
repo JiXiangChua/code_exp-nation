@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 
 const globalStyle = StyleSheet.create({
   header1: {
@@ -48,6 +48,9 @@ const globalStyle = StyleSheet.create({
   body4Bold: {
     fontFamily: "SourceSansBold",
     fontSize: 10,
+  },
+  androidNavigationTitle: {
+    paddingTop: Platform.OS === "android" ? 50 : 0,
   },
 });
 

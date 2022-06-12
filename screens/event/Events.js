@@ -1,25 +1,39 @@
-import { View, Text, StyleSheet, Button } from "react-native";
-import IconButton from "../../components/IconButton";
-import color from "../../constants/color";
+import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
+import globalStyle from "../../constants/globalStyle";
+import NavigationHeader from "../../components/NavigationHeader";
+import FilterTab from "../../components/FilterTab";
+import EventsCard from "./components/EventsCard";
+
+const filterTabArray = [
+  {
+    status: "Ongoing",
+  },
+  {
+    status: "Completed",
+  },
+];
 
 const Events = ({ navigation }) => {
   return (
-    <View>
-      <Text>This is an Events screen</Text>
-      {/* <Button
-        title="Go to rewards"
-        onPress={() => navigation.navigate("Rewards")}
-      /> */}
-      <IconButton
-        name="search-outline"
-        size={30}
-        color={color.Grey500}
+    <SafeAreaView
+      style={[globalStyle.androidNavigationTitle, styles.container]}
+    >
+      <NavigationHeader
+        title="Events"
+        iconName="md-gift"
+        iconSize={30}
         onPress={() => navigation.navigate("Rewards")}
       />
-    </View>
+      <FilterTab array={filterTabArray} />
+      <EventsCard />
+    </SafeAreaView>
   );
 };
 
 export default Events;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
