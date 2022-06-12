@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import globalStyle from "../../constants/globalStyle";
 import NavigationHeader from "../../components/NavigationHeader";
 import FilterTab from "../../components/FilterTab";
-import EventCard from "./components/EventCard";
+import EventsCard from "./components/EventsCard";
 
 const filterTabArray = [
   {
@@ -25,7 +25,7 @@ const Events = ({ navigation }) => {
         onPress={() => navigation.navigate("Rewards")}
       />
       <FilterTab array={filterTabArray} />
-      <EventCard />
+      <EventsCard />
     </SafeAreaView>
   );
 };

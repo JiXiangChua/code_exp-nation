@@ -24,7 +24,7 @@ const Item = ({ item, onPress }) => (
   </TouchableOpacity>
 );
 
-const EventCard = () => {
+const EventsCard = () => {
   const { userProfile } = useContext(LoginContext);
   const { events } = userProfile;
   const [selectedId, setSelectedId] = useState(null);
@@ -44,7 +44,7 @@ const EventCard = () => {
   );
 };
 
-export default EventCard;
+export default EventsCard;
 
 const styles = StyleSheet.create({
   container: {
