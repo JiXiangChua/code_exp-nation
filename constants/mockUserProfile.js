@@ -58,6 +58,14 @@ const mockUserProfile = {
       message: "Placeholder ",
       date: "Sun Jun 12 2022 16:54:21 GMT+0800",
     },
+    {
+      id: "1b9d6bcd-aasd-4b2d-9b5d-ab8dfbbd4ghy",
+      sender: "LTA James",
+      status: true,
+      caption: "Reservists",
+      message: "Placeholder ",
+      date: "Sun May 12 2022 08:00:00 GMT+0800",
+    },
   ],
   events: [
     {
