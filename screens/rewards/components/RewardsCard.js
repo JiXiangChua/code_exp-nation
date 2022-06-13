@@ -8,6 +8,8 @@ const RewardsCard = (props) => {
       <Image style={{ width: "100%" }} source={props.imageBackground} />
       <View style={[styles.cardtextContainer]}>
         <Text style={[globalStyle.header4, styles.text]}>{props.title}</Text>
+      </View>
+      <View style={styles.pointContainer}>
         <Text style={[globalStyle.body1, styles.subtext]}>{props.points}</Text>
       </View>
     </TouchableOpacity>
@@ -23,19 +25,26 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     borderRadius: 7,
     elevation: 5,
+    overflow: "hidden",
   },
   cardtextContainer: {
     paddingHorizontal: 30,
     marginRight: 20,
+    flex: 10,
+  },
+  pointContainer: {
+    flexDirection: "column",
+    justifyContent: "space-between",
+    flex: 0.1,
   },
   text: {
     color: color.Emerald,
     marginBottom: 10,
     marginTop: 10,
+    marginLeft: -25,
   },
   subtext: {
-    marginRight: 5,
     color: color.Emerald,
-    marginBottom: 10,
+    marginLeft: 5,
   },
 });
