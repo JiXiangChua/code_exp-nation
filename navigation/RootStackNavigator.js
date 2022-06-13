@@ -7,6 +7,7 @@ import Login from "../screens/login/Login";
 import MainTabNavigator from "./MainTabNavigator";
 import MissionHome from "../screens/mission/home/MissionHome";
 import Compass from "../screens/mission/compass/Compass";
+import GroupScreen from "../screens/mission/group/GroupScreen";
 
 const Stack = createStackNavigator();
 
@@ -39,7 +40,32 @@ const RootStackNavigator = () => {
             <Stack.Screen
               name="Compass"
               component={Compass}
-              options={{ cardStyleInterpolator: forFade }}
+              options={{
+                cardStyleInterpolator: forFade,
+                headerShown: true,
+                title: "",
+                headerStyle: {
+                  backgroundColor: "black",
+                },
+                headerShadowVisible: false,
+                headerTintColor: "white",
+                headerBackTitleVisible: false,
+              }}
+            />
+            <Stack.Screen
+              name="Group"
+              component={GroupScreen}
+              options={{
+                cardStyleInterpolator: forFade,
+                headerShown: true,
+                title: "",
+                headerStyle: {
+                  backgroundColor: "black",
+                },
+                headerShadowVisible: false,
+                headerTintColor: "white",
+                headerBackTitleVisible: false,
+              }}
             />
           </Stack.Group>
         )}

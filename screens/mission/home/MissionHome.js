@@ -31,13 +31,14 @@ const MissionHome = ({ navigation }) => {
         <MissionModeHeader />
         <View style={styles.frequencyContainer}>
           <TextInput style={styles.textInput} placeholder="Enter Frequency" />
-          <View
+          <TouchableOpacity
             style={{
               width: 40,
               height: 40,
               borderRadius: 40,
               backgroundColor: "white",
             }}
+            onPress={() => navigation.navigate("Group")}
           />
         </View>
         <View style={styles.buttonContainer}>
