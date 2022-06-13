@@ -3,9 +3,14 @@ import globalStyle from "../../../constants/globalStyle";
 import color from "../../../constants/color";
 
 const MailCard = (props) => {
+  const setMailAsRead = () => {
+    props.onPress(props.id);
+  };
+
   return (
     <TouchableOpacity
       style={[styles.announcementContainer, globalStyle.dropShadow]}
+      onPress={setMailAsRead}
     >
       <View style={styles.firstRow}>
         <Text style={globalStyle.body1Bold}>{props.sender}</Text>

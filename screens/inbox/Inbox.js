@@ -24,7 +24,7 @@ const filterTab = [
 
 const Inbox = () => {
   const { userProfile } = useContext(LoginContext);
-  const { mails } = userProfile;
+  let { mails } = userProfile;
   const [filteredMails, setFilteredMails] = useState(mails);
   const [filterStatus, setFilterStatus] = useState(false); //false - show all mail, true - show unread only
   const [showSearchBar, setShowSearchBar] = useState(false);
@@ -61,6 +61,20 @@ const Inbox = () => {
       //Search bar is blank
       renderMailsOnReadStatus();
     }
+  };
+
+  const setMailAsRead = (id) => {
+    let selectedMail = mails.filter((mail) => mail.id === id);
+    selectedMail[0].status = true;
+    let updatedMail = filteredMails.map((mail) => {
+      if (mail.id === selectedMail[0].id) {
+        return selectedMail[0];
+      } else {
+        return mail;
+      }
+    });
+    mails = updatedMail;
+    renderMailsOnReadStatus(); //update the filter mail
   };
 
   return (
@@ -100,6 +114,8 @@ const Inbox = () => {
               caption={itemData.item.caption}
               message={itemData.item.message}
               date={itemData.item.date}
+              onPress={setMailAsRead}
+              id={itemData.item.id}
             />
           );
         }}
