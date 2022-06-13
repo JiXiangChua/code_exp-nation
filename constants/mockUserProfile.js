@@ -144,7 +144,7 @@ const mockUserProfile = {
         },
         {
           id: "2",
-          title: "$10 The Chevrons \nVoucher",
+          title: "$10 The Chevrons Voucher",
           status: false,
           content: "For more info...",
           points: "1,500 points ",
@@ -152,7 +152,7 @@ const mockUserProfile = {
         },
         {
           id: "3",
-          title: "$10 HomeTeamNS \nVoucher",
+          title: "$10 HomeTeamNS Voucher",
           status: false,
           content: "For more info...",
           points: "1,500 points ",
@@ -166,7 +166,7 @@ const mockUserProfile = {
       data: [
         {
           id: "1",
-          title: "2D1N Chalet at The \nChevrons",
+          title: "2D1N Chalet at The Chevrons",
           status: false,
           content: "For more info...",
           points: "11,250 points ",
@@ -174,7 +174,7 @@ const mockUserProfile = {
         },
         {
           id: "2",
-          title: "1 Year Fitness Workz \nPremium Membership",
+          title: "1 Year Fitness Workz Premium Membership",
           status: false,
           content: "For more info...",
           points: "11,250 points ",
@@ -182,7 +182,7 @@ const mockUserProfile = {
         },
         {
           id: "3",
-          title: "1 Day Adventure HQ \nPass",
+          title: "1 Day Adventure HQ Pass",
           status: false,
           content: "For more info...",
           points: "4,500 points ",
@@ -195,7 +195,7 @@ const mockUserProfile = {
       data: [
         {
           id: "1",
-          title: "1 Day Adventure HQ \nPass",
+          title: "1 Day Adventure HQ Pass",
           status: false,
           content: "For more info...",
           points: "4,500 points ",
@@ -203,7 +203,7 @@ const mockUserProfile = {
         },
         {
           id: "2",
-          title: "2H Indoor Badminton \nCourt at Safra",
+          title: "2Hr Indoor Badminton Court at Safra",
           status: false,
           content: "For more info...",
           points: "500 points ",

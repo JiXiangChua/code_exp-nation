@@ -5,9 +5,18 @@ import color from "../../../constants/color";
 const RewardsCard = (props) => {
   return (
     <TouchableOpacity style={[styles.itemContainer, globalStyle.dropShadow]}>
-      <Image style={{ width: "100%" }} source={props.imageBackground} />
+      <Image
+        style={{
+          width: "100%",
+          borderTopLeftRadius: 7,
+          borderTopRightRadius: 7,
+        }}
+        source={props.imageBackground}
+      />
       <View style={[styles.cardtextContainer]}>
-        <Text style={[globalStyle.header4, styles.text]}>{props.title}</Text>
+        <Text style={[globalStyle.header4, styles.text]} numberOfLines={3}>
+          {props.title}
+        </Text>
       </View>
       <View style={styles.pointContainer}>
         <Text style={[globalStyle.body1, styles.subtext]}>{props.points}</Text>
@@ -25,26 +34,27 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     borderRadius: 7,
     elevation: 5,
-    overflow: "hidden",
   },
   cardtextContainer: {
+    flex: 2,
     paddingHorizontal: 30,
     marginRight: 20,
-    flex: 10,
   },
   pointContainer: {
+    flex: 1,
     flexDirection: "column",
-    justifyContent: "space-between",
-    flex: 0.1,
+    justifyContent: "flex-end",
   },
   text: {
     color: color.Emerald,
     marginBottom: 10,
     marginTop: 10,
     marginLeft: -25,
+    width: 180,
   },
   subtext: {
     color: color.Emerald,
     marginLeft: 5,
+    marginTop: 10,
   },
 });
