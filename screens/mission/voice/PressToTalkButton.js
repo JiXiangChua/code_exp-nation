@@ -5,11 +5,16 @@ import { Ionicons } from "@expo/vector-icons";
 
 const PressToTalkButton = () => {
   return (
-    <View style={styles.circle}>
-      <View style={{ marginLeft: 10 }}>
-        <Ionicons name="md-mic-outline" size={180} color="white" />
+    <>
+      <View style={styles.circle}>
+        <View style={{ marginLeft: 10 }}>
+          <Ionicons name="md-mic-outline" size={180} color="white" />
+        </View>
       </View>
-    </View>
+      <Text style={[globalStyle.header3, styles.text]}>
+        PRESS AND HOLD TO TALK
+      </Text>
+    </>
   );
 };
 
@@ -24,8 +29,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  //   text: {
-  //     color: color.White,
-  //     marginTop: 30,
-  //   },
+  text: {
+    color: color.White,
+    marginTop: 30,
+  },
 });

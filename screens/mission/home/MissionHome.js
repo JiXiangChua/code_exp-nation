@@ -1,12 +1,23 @@
-import { View, SafeAreaView, StyleSheet, TextInput } from "react-native";
+import { useState } from "react";
+import {
+  View,
+  SafeAreaView,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import { StatusBar } from "expo-status-bar";
+import { Ionicons } from "@expo/vector-icons";
 import color from "../../../constants/color";
 import globalStyle from "../../../constants/globalStyle";
 
 import MissionModeHeader from "../../../components/MissionModeHeader";
 import PressToTalkButton from "../voice/PressToTalkButton";
+import TalkingButton from "../voice/TalkingButton";
 
 const MissionHome = () => {
+  const [talking, setTalking] = useState(false);
+
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
@@ -26,9 +37,21 @@ const MissionHome = () => {
           />
         </View>
         <View style={styles.buttonContainer}>
-          <PressToTalkButton />
+          <TouchableOpacity
+            activeOpacity={1}
+            onLongPress={() => setTalking(true)}
+            onPressOut={() => setTalking(false)}
+            style={styles.touchToTalkButton}
+          >
+            {!talking && <PressToTalkButton />}
+            {talking && <TalkingButton />}
+          </TouchableOpacity>
         </View>
-        <View style={styles.compassContainer}></View>
+        <View style={styles.compassContainer}>
+          <TouchableOpacity>
+            <Ionicons name="md-compass-outline" size={70} color="white" />
+          </TouchableOpacity>
+        </View>
       </SafeAreaView>
     </View>
   );
@@ -68,7 +91,13 @@ const styles = StyleSheet.create({
   },
   compassContainer: {
     flex: 1,
-    width: 100,
-    backgroundColor: "blue",
+    justifyContent: "center",
+    alignItems: "center",
+    opacity: 0.5,
+  },
+  touchToTalkButton: {
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
   },
 });
