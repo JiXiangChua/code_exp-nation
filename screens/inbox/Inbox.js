@@ -142,9 +142,11 @@ const styles = StyleSheet.create({
   },
   textInput: {
     margin: 10,
+    marginTop: 0,
     borderWidth: 1,
     borderRadius: 10,
     padding: 5,
+    paddingLeft: 10,
     borderWidth: 1,
     borderColor: color.Black,
   },

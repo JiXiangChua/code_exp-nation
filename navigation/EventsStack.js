@@ -20,8 +20,9 @@ const EventsStack = () => {
           headerShown: true,
           title: "",
           headerStyle: {
-            backgroundColor: color.Grey200,
+            backgroundColor: color.OffWhite,
           },
+          headerTintColor: color.Emerald,
         }}
       />
     </Stack.Navigator>
