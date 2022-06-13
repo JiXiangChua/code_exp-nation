@@ -3,7 +3,6 @@ import color from "../../../constants/color";
 import globalStyle from "../../../constants/globalStyle";
 
 const EventsCard = ({ item, onPress }) => {
-  console.log(item);
   return (
     <TouchableOpacity
       onPress={onPress}
