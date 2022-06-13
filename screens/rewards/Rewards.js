@@ -41,29 +41,15 @@ const Rewards = () => {
           showsHorizontalScrollIndicator={false}
           nestedScrollEnabled={true}
         >
-          <TouchableOpacity>
-            <Text style={[globalStyle.body1Bold, styles.button]}>All</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Text style={[globalStyle.body1Bold, styles.button]}>
-              My Rewards
-            </Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Text style={[globalStyle.body1Bold, styles.button]}>Popular</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Text style={[globalStyle.body1Bold, styles.button]}>
-              Lifestyles
-            </Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Text style={[globalStyle.body1Bold, styles.button]}>Shopping</Text>
-          </TouchableOpacity>
+          {filters.map((filter) => {
+            return (
+              <TouchableOpacity>
+                <Text style={[globalStyle.body1Bold, styles.button]}>
+                  {filter}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
         </ScrollView>
 
         <ScrollView nestedScrollEnabled={true}>
@@ -91,6 +77,8 @@ const Rewards = () => {
 };
 
 export default Rewards;
+
+const filters = ["All", "My Rewards", "Popular", "Lifestyles", "Shopping"];
 
 const styles = StyleSheet.create({
   container: {
