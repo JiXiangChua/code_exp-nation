@@ -5,15 +5,12 @@ import color from "../../../constants/color";
 const RewardsCard = (props) => {
   return (
     <TouchableOpacity>
-      <View style={styles.firstRow}>
-        <Text style={globalStyle.header2}>{props.title}</Text>
-      </View>
       <View style={styles.item}>
         <Image source={props.imageBackground} />
         <View style={styles.cardtextContainer}>
-          <Text style={globalStyle.body1Bold}>{props.content}</Text>
+          <Text style={globalStyle.body1Bold}>{props.title}</Text>
           <Text style={globalStyle.body2} color={color.Grey500}></Text>
-          <Text style={globalStyle.body2}>{props.message}</Text>
+          <Text style={globalStyle.body2}>{props.points}</Text>
         </View>
       </View>
     </TouchableOpacity>

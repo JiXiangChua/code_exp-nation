@@ -13,11 +13,13 @@ import globalStyle from "../../constants/globalStyle";
 import { LoginContext } from "../../store/context/login-context";
 import NavigationHeader from "../../components/NavigationHeader";
 import color from "../../constants/color";
+import RewardsCategory from "./components/RewardsCategory";
 import RewardsCard from "./components/RewardsCard";
 
 const Rewards = () => {
   const { userProfile } = useContext(LoginContext);
-  let { myrewards } = userProfile;
+  let { rewards } = userProfile;
+
   return (
     <SafeAreaView>
       <ImageBackground
@@ -59,19 +61,11 @@ const Rewards = () => {
       </ScrollView>
 
       <FlatList
-        data={myrewards}
-        renderItem={(itemData) => {
-          return (
-            <RewardsCard
-              title={itemData.item.title}
-              content={itemData.item.content}
-              message={itemData.item.message}
-              imageBackground={itemData.item.imageBackground}
-              id={itemData.item.id}
-            />
-          );
+        data={rewards}
+        renderItem={({ item }) => {
+          return <RewardsCategory category={item.category} data={item.data} />;
         }}
-        keyExtractor={(myrewards) => myrewards.id}
+        keyExtractor={(item) => item.category}
       />
     </SafeAreaView>
   );
