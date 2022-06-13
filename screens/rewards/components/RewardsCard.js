@@ -4,7 +4,10 @@ import color from "../../../constants/color";
 
 const RewardsCard = (props) => {
   return (
-    <TouchableOpacity style={[styles.itemContainer, globalStyle.dropShadow]}>
+    <TouchableOpacity
+      style={[styles.itemContainer, globalStyle.dropShadow]}
+      onPress={props.onPress}
+    >
       <Image
         style={{
           width: "100%",

@@ -46,7 +46,7 @@ const Events = ({ navigation }) => {
     return (
       <EventsCard
         item={item}
-        onPress={() => navigation.navigate("EventsModal")}
+        onPress={() => navigation.navigate("EventsModal", { data: item })}
       />
     );
   };

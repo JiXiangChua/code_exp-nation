@@ -1,10 +1,17 @@
 import { View, StyleSheet, Text, FlatList } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import color from "../../../constants/color";
 import globalStyle from "../../../constants/globalStyle";
 import RewardsCard from "./RewardsCard";
 
 const RewardsCategory = (props) => {
   const { category, data } = props;
+  const navigation = useNavigation();
+
+  const goToRewardsDetailModal = () => {
+    navigation.navigate("RewardsModal", { data: data });
+  };
+
   return (
     <View style={styles.container}>
       <Text style={[globalStyle.header3, styles.categoryText]}>{category}</Text>
@@ -20,6 +27,7 @@ const RewardsCategory = (props) => {
               points={item.points}
               imageBackground={item.imageBackground}
               id={item.id}
+              onPress={goToRewardsDetailModal}
             />
           );
         }}

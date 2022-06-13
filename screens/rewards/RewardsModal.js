@@ -1,19 +1,18 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import color from "../../constants/color";
 
-const EventsModal = ({ route }) => {
+const RewardsModal = ({ route }) => {
   //can pass the data using routes.
   console.log(route.params.data); //to pull out data from here
-
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.goBackBar} />
-      <Text>This is events modal screen</Text>
+      <Text>This is rewards modal screen</Text>
     </View>
   );
 };
 
-export default EventsModal;
+export default RewardsModal;
 
 const styles = StyleSheet.create({
   container: {
