@@ -1,27 +1,22 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import globalStyle from "../../../constants/globalStyle";
 import color from "../../../constants/color";
 
 const MailCard = (props) => {
   return (
-    <View style={styles.announcementContainer}>
+    <TouchableOpacity
+      style={[styles.announcementContainer, globalStyle.dropShadow]}
+    >
       <View style={styles.firstRow}>
-        <Text style={[globalStyle.body1Bold, styles.senderContainer]}>
-          {props.sender}
-        </Text>
-        <Text
-          style={[globalStyle.body2, styles.dateContainer]}
-          color={color.Grey500}
-        >
+        <Text style={globalStyle.body1Bold}>{props.sender}</Text>
+        <Text style={globalStyle.body2} color={color.Grey500}>
           {props.date}
         </Text>
       </View>
       <View style={styles.secondRow}>
-        <Text style={[globalStyle.body2, styles.captionContainer]}>
-          {props.caption}
-        </Text>
+        <Text style={globalStyle.body2}>{props.caption}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -29,33 +24,21 @@ export default MailCard;
 
 const styles = StyleSheet.create({
   announcementContainer: {
-    margin: 5,
-    borderWidth: 1,
+    marginVertical: 10,
+    marginHorizontal: 15,
     borderRadius: 10,
+    backgroundColor: color.White,
   },
   firstRow: {
+    flex: 1,
     flexDirection: "row",
     padding: 15,
+    justifyContent: "space-between",
   },
   secondRow: {
+    flex: 1,
     flexDirection: "row",
     padding: 15,
-    marginTop: 10,
-    marginBottom: 40,
-  },
-  senderContainer: {
-    position: "absolute",
-    left: 10,
-    top: 10,
-  },
-  dateContainer: {
-    position: "absolute",
-    right: 15,
-    top: 10,
-  },
-  captionContainer: {
-    position: "absolute",
-    left: 15,
-    top: 10,
+    paddingBottom: 40,
   },
 });
