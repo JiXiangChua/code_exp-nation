@@ -4,14 +4,11 @@ import color from "../../../constants/color";
 
 const RewardsCard = (props) => {
   return (
-    <TouchableOpacity>
-      <View style={styles.item}>
-        <Image source={props.imageBackground} />
-        <View style={styles.cardtextContainer}>
-          <Text style={globalStyle.body1Bold}>{props.title}</Text>
-          <Text style={globalStyle.body2} color={color.Grey500}></Text>
-          <Text style={globalStyle.body2}>{props.points}</Text>
-        </View>
+    <TouchableOpacity style={[styles.itemContainer, globalStyle.dropShadow]}>
+      <Image style={{ width: "100%" }} source={props.imageBackground} />
+      <View style={[styles.cardtextContainer]}>
+        <Text style={[globalStyle.header4, styles.text]}>{props.title}</Text>
+        <Text style={[globalStyle.body1, styles.subtext]}>{props.points}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -20,23 +17,25 @@ const RewardsCard = (props) => {
 export default RewardsCard;
 
 const styles = StyleSheet.create({
-  firstRow: {
-    flex: 1,
-    flexDirection: "row",
-    padding: 15,
-    justifyContent: "space-between",
+  itemContainer: {
+    backgroundColor: color.Grey200,
+    marginVertical: 10,
+    marginHorizontal: 15,
+    borderRadius: 7,
+    elevation: 5,
   },
   cardtextContainer: {
-    marginLeft: 20,
-    color: color.Black,
+    paddingHorizontal: 30,
+    marginRight: 20,
   },
-  item: {
-    backgroundColor: color.Grey200,
-    paddingBottom: 10,
-    marginVertical: 8,
-    marginHorizontal: 21.5,
-    borderRadius: 10,
-    borderColor: color.Black,
-    borderWidth: 1,
+  text: {
+    color: color.Emerald,
+    marginBottom: 10,
+    marginTop: 10,
+  },
+  subtext: {
+    marginRight: 5,
+    color: color.Emerald,
+    marginBottom: 10,
   },
 });

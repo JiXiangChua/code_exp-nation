@@ -1,11 +1,13 @@
 import { View, StyleSheet, Text, FlatList } from "react-native";
+import color from "../../../constants/color";
+import globalStyle from "../../../constants/globalStyle";
 import RewardsCard from "./RewardsCard";
 
 const RewardsCategory = (props) => {
   const { category, data } = props;
   return (
     <View style={styles.container}>
-      <Text>{category}</Text>
+      <Text style={[globalStyle.header3, styles.categoryText]}>{category}</Text>
       <FlatList
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -32,5 +34,11 @@ export default RewardsCategory;
 const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
+  },
+  categoryText: {
+    marginLeft: 20,
+    marginTop: 20,
+    marginBottom: 5,
+    color: color.Emerald,
   },
 });
