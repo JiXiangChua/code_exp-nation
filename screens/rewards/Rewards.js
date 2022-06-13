@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, SafeAreaView } from "react-native";
+import { View, Text, StyleSheet, SafeAreaView, Image } from "react-native";
 import globalStyle from "../../constants/globalStyle";
 import NavigationHeader from "../../components/NavigationHeader";
 import RewardsFilterTab from "../../components/RewardsFilterTab";
@@ -21,9 +21,17 @@ const filterTabArray = [
 
 const Rewards = () => {
   return (
-    <SafeAreaView style={[styles.container]}>
-      <Text style={[globalStyle.header1, styles.text]}>800</Text>
-      <Text style={[globalStyle.header4, styles.text]}>points available</Text>
+    <SafeAreaView>
+      <View style={[styles.container]}>
+        <Image
+          source={require("../../assets/images/RewardsHeaderBackdrop.png")}
+        />
+        {/* <Text style={[globalStyle.header1, styles.pointsText]}>800</Text>
+        <Text style={[globalStyle.header4, styles.pointsAvailText]}>
+          points available
+        </Text> */}
+      </View>
+
       <RewardsFilterTab array={filterTabArray} />
     </SafeAreaView>
   );
@@ -33,12 +41,16 @@ export default Rewards;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "yellow",
+    backgroundColor: color.Grey100,
+    height: 185,
   },
-  text: {
+  pointsText: {
     color: color.Emerald,
-    marginLeft: 20,
-    marginTop: -5,
+    marginLeft: 25,
+    marginTop: 70,
+  },
+  pointsAvailText: {
+    color: color.Emerald,
+    marginLeft: 25,
   },
 });
