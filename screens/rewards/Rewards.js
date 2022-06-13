@@ -60,13 +60,25 @@ const Rewards = () => {
         </TouchableOpacity>
       </ScrollView>
 
-      <FlatList
+      {/* <FlatList
         data={rewards}
         renderItem={({ item }) => {
           return <RewardsCategory category={item.category} data={item.data} />;
         }}
         keyExtractor={(item) => item.category}
-      />
+      /> */}
+
+      <ScrollView>
+        {rewards.map((reward) => {
+          return (
+            <RewardsCategory
+              key={reward.category}
+              category={reward.category}
+              data={reward.data}
+            />
+          );
+        })}
+      </ScrollView>
     </SafeAreaView>
   );
 };
