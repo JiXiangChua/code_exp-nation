@@ -22,42 +22,61 @@ const Rewards = () => {
 
   return (
     <SafeAreaView>
-      <ImageBackground
-        style={{ width: "100%" }}
-        source={require("../../assets/images/RewardsHeaderBackdrop.png")}
-      >
-        <View style={[styles.container]}>
-          <Text style={[globalStyle.header1, styles.pointsText]}>800</Text>
-          <Text style={[globalStyle.header4, styles.pointsAvailText]}>
-            points available
-          </Text>
-        </View>
-      </ImageBackground>
+      <ScrollView>
+        <ImageBackground
+          style={{ width: "100%" }}
+          source={require("../../assets/images/RewardsHeaderBackdrop.png")}
+        >
+          <View style={[styles.container]}>
+            <Text style={[globalStyle.header1, styles.pointsText]}>800</Text>
+            <Text style={[globalStyle.header4, styles.pointsAvailText]}>
+              points available
+            </Text>
+          </View>
+        </ImageBackground>
 
-      <ScrollView
-        contentContainerStyle={styles.buttonContainer}
-        horizontal={true}
-        showsHorizontalScrollIndicator={false}
-      >
-        <TouchableOpacity>
-          <Text style={[globalStyle.body1Bold, styles.button]}>All</Text>
-        </TouchableOpacity>
+        <ScrollView
+          contentContainerStyle={styles.buttonContainer}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          nestedScrollEnabled={true}
+        >
+          <TouchableOpacity>
+            <Text style={[globalStyle.body1Bold, styles.button]}>All</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity>
-          <Text style={[globalStyle.body1Bold, styles.button]}>My Rewards</Text>
-        </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={[globalStyle.body1Bold, styles.button]}>
+              My Rewards
+            </Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity>
-          <Text style={[globalStyle.body1Bold, styles.button]}>Popular</Text>
-        </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={[globalStyle.body1Bold, styles.button]}>Popular</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity>
-          <Text style={[globalStyle.body1Bold, styles.button]}>Lifestyles</Text>
-        </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={[globalStyle.body1Bold, styles.button]}>
+              Lifestyles
+            </Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity>
-          <Text style={[globalStyle.body1Bold, styles.button]}>Shopping</Text>
-        </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={[globalStyle.body1Bold, styles.button]}>Shopping</Text>
+          </TouchableOpacity>
+        </ScrollView>
+
+        <ScrollView nestedScrollEnabled={true}>
+          {rewards.map((reward) => {
+            return (
+              <RewardsCategory
+                key={reward.category}
+                category={reward.category}
+                data={reward.data}
+              />
+            );
+          })}
+        </ScrollView>
       </ScrollView>
 
       {/* <FlatList
@@ -67,18 +86,6 @@ const Rewards = () => {
         }}
         keyExtractor={(item) => item.category}
       /> */}
-
-      <ScrollView>
-        {rewards.map((reward) => {
-          return (
-            <RewardsCategory
-              key={reward.category}
-              category={reward.category}
-              data={reward.data}
-            />
-          );
-        })}
-      </ScrollView>
     </SafeAreaView>
   );
 };
