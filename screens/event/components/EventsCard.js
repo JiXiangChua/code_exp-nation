@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     color: color.Black,
   },
   item: {
-    backgroundColor: color.Grey200,
+    backgroundColor: color.White,
     paddingBottom: 10,
     marginVertical: 8,
     marginHorizontal: 21.5,

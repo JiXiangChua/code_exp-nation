@@ -1,6 +1,7 @@
 import { useState, useContext, useEffect } from "react";
 import { StyleSheet, SafeAreaView, FlatList } from "react-native";
 import globalStyle from "../../constants/globalStyle";
+import color from "../../constants/color";
 import { LoginContext } from "../../store/context/login-context";
 import NavigationHeader from "../../components/NavigationHeader";
 import FilterTab from "../../components/FilterTab";
@@ -73,5 +74,6 @@ export default Events;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: color.OffWhite,
   },
 });
