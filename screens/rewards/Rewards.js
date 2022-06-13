@@ -43,7 +43,7 @@ const Rewards = () => {
         >
           {filters.map((filter) => {
             return (
-              <TouchableOpacity>
+              <TouchableOpacity key={filter}>
                 <Text style={[globalStyle.body1Bold, styles.button]}>
                   {filter}
                 </Text>
@@ -106,8 +106,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 5,
     borderWidth: 1,
+    flexDirection: "row",
     justifyContent: "center",
     alignContent: "center",
     borderColor: color.Emerald,
+    width: 100,
   },
 });
