@@ -111,6 +111,24 @@ const mockUserProfile = {
       imageBackground: require("../assets/images/events-ippt.png"),
     },
   ],
+  myrewards: [
+    {
+      id: "1",
+      title: "My Rewards",
+      status: false,
+      content: "$10 Safra Voucher",
+      message: "1,500 points ",
+      imageBackground: require("../assets/images/events-combatshoot.png"),
+    },
+    {
+      id: "2",
+      title: "My Rewards",
+      status: false,
+      content: "xxx",
+      message: "1,500 points ",
+      imageBackground: require("../assets/images/events-combatshoot.png"),
+    },
+  ],
 };
 
 export default mockUserProfile;

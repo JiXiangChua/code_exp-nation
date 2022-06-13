@@ -1,3 +1,4 @@
+import { useState, useContext, useEffect } from "react";
 import {
   ScrollView,
   Text,
@@ -6,12 +7,17 @@ import {
   TouchableOpacity,
   View,
   ImageBackground,
+  FlatList,
 } from "react-native";
 import globalStyle from "../../constants/globalStyle";
+import { LoginContext } from "../../store/context/login-context";
 import NavigationHeader from "../../components/NavigationHeader";
 import color from "../../constants/color";
+import RewardsCard from "./components/RewardsCard";
 
 const Rewards = () => {
+  const { userProfile } = useContext(LoginContext);
+  let { myrewards } = userProfile;
   return (
     <SafeAreaView>
       <ImageBackground
@@ -51,9 +57,22 @@ const Rewards = () => {
           <Text style={[globalStyle.body1Bold, styles.button]}>Shopping</Text>
         </TouchableOpacity>
       </ScrollView>
-      <View>
-        <Text>My rewards... </Text>
-      </View>
+
+      <FlatList
+        data={myrewards}
+        renderItem={(itemData) => {
+          return (
+            <RewardsCard
+              title={itemData.item.title}
+              content={itemData.item.content}
+              message={itemData.item.message}
+              imageBackground={itemData.item.imageBackground}
+              id={itemData.item.id}
+            />
+          );
+        }}
+        keyExtractor={(myrewards) => myrewards.id}
+      />
     </SafeAreaView>
   );
 };
