@@ -15,8 +15,12 @@ import MissionModeHeader from "../../../components/MissionModeHeader";
 import PressToTalkButton from "../voice/PressToTalkButton";
 import TalkingButton from "../voice/TalkingButton";
 
-const MissionHome = () => {
+const MissionHome = ({ navigation }) => {
   const [talking, setTalking] = useState(false);
+
+  const goToCompass = () => {
+    navigation.navigate("Compass");
+  };
 
   return (
     <View style={styles.container}>
@@ -48,7 +52,7 @@ const MissionHome = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.compassContainer}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={goToCompass}>
             <Ionicons name="md-compass-outline" size={70} color="white" />
           </TouchableOpacity>
         </View>

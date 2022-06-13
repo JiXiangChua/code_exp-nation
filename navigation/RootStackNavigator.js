@@ -6,6 +6,7 @@ import { MissionContext } from "../store/context/mission-context";
 import Login from "../screens/login/Login";
 import MainTabNavigator from "./MainTabNavigator";
 import MissionHome from "../screens/mission/home/MissionHome";
+import Compass from "../screens/mission/compass/Compass";
 
 const Stack = createStackNavigator();
 
@@ -29,11 +30,18 @@ const RootStackNavigator = () => {
       >
         {!isLogin && <Stack.Screen name="Login" component={Login} />}
         {isLogin && isMissionMode && (
-          <Stack.Screen
-            name="Mission"
-            component={MissionHome}
-            options={{ cardStyleInterpolator: forFade }}
-          />
+          <Stack.Group>
+            <Stack.Screen
+              name="Mission"
+              component={MissionHome}
+              options={{ cardStyleInterpolator: forFade }}
+            />
+            <Stack.Screen
+              name="Compass"
+              component={Compass}
+              options={{ cardStyleInterpolator: forFade }}
+            />
+          </Stack.Group>
         )}
         {isLogin && (
           <Stack.Screen
