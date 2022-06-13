@@ -1,6 +1,7 @@
 import { useState, useContext, useEffect } from "react";
 import {
   StyleSheet,
+  Text,
   TextInput,
   SafeAreaView,
   FlatList,
@@ -104,23 +105,30 @@ const Inbox = () => {
       )}
 
       <FilterTab array={filterTab} onChangeStatus={setFilterStatusHandler} />
-      <FlatList
-        data={filteredMails}
-        renderItem={(itemData) => {
-          return (
-            <MailCard
-              sender={itemData.item.sender}
-              status={itemData.item.status}
-              caption={itemData.item.caption}
-              message={itemData.item.message}
-              date={itemData.item.date}
-              onPress={setMailAsRead}
-              id={itemData.item.id}
-            />
-          );
-        }}
-        keyExtractor={(mail) => mail.id}
-      />
+      {filteredMails.length !== 0 && (
+        <FlatList
+          data={filteredMails}
+          renderItem={(itemData) => {
+            return (
+              <MailCard
+                sender={itemData.item.sender}
+                status={itemData.item.status}
+                caption={itemData.item.caption}
+                message={itemData.item.message}
+                date={itemData.item.date}
+                onPress={setMailAsRead}
+                id={itemData.item.id}
+              />
+            );
+          }}
+          keyExtractor={(mail) => mail.id}
+        />
+      )}
+      {filteredMails.length === 0 && (
+        <Text style={[globalStyle.body1, styles.defaultNoMessageText]}>
+          No messages are found
+        </Text>
+      )}
     </SafeAreaView>
   );
 };
@@ -139,5 +147,9 @@ const styles = StyleSheet.create({
     padding: 5,
     borderWidth: 1,
     borderColor: color.Black,
+  },
+  defaultNoMessageText: {
+    alignSelf: "center",
+    marginTop: "50%",
   },
 });
