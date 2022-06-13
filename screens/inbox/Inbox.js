@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import {
   StyleSheet,
   TextInput,
@@ -25,6 +25,7 @@ const filterTab = [
 const Inbox = () => {
   const { userProfile } = useContext(LoginContext);
   const { mails } = userProfile;
+  const [filteredMails, setFilteredMails] = useState(mails);
   const [filterStatus, setFilterStatus] = useState(false); //false - show all mail, true - show unread only
   const [showSearchBar, setShowSearchBar] = useState(false);
 
@@ -32,13 +33,35 @@ const Inbox = () => {
     setFilterStatus(status);
   };
 
-  let filteredMails = mails;
+  const renderMailsOnReadStatus = () => {
+    if (filterStatus) {
+      let filtered = mails.filter((mail) => {
+        return mail.status === false;
+      });
+      setFilteredMails(filtered);
+    } else {
+      setFilteredMails(mails);
+    }
+  };
 
-  if (filterStatus) {
-    filteredMails = mails.filter((mail) => {
-      return mail.status === false;
-    });
-  }
+  useEffect(() => {
+    renderMailsOnReadStatus();
+  }, [filterStatus]);
+
+  const searchBarFilter = (text) => {
+    if (text) {
+      let filtered = filteredMails.filter((mail) => {
+        return (
+          mail.sender.toLowerCase().includes(text) ||
+          mail.caption.toLowerCase().includes(text)
+        );
+      });
+      setFilteredMails(filtered);
+    } else {
+      //Search bar is blank
+      renderMailsOnReadStatus();
+    }
+  };
 
   return (
     <SafeAreaView
@@ -62,6 +85,7 @@ const Inbox = () => {
           onEndEditing={() => {
             setShowSearchBar(false);
           }}
+          onChangeText={searchBarFilter}
         ></TextInput>
       )}
 
