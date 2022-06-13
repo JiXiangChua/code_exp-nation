@@ -1,3 +1,4 @@
+import { useState, useContext } from "react";
 import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import globalStyle from "../../constants/globalStyle";
 import NavigationHeader from "../../components/NavigationHeader";
