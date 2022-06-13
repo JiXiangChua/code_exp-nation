@@ -43,7 +43,12 @@ const Events = ({ navigation }) => {
   }, [filterStatus]);
 
   const renderItem = ({ item }) => {
-    return <EventsCard item={item} onPress={() => {}} />;
+    return (
+      <EventsCard
+        item={item}
+        onPress={() => navigation.navigate("EventsModal")}
+      />
+    );
   };
 
   return (
