@@ -15,6 +15,7 @@ const MailCard = (props) => {
       </View>
       <View style={styles.secondRow}>
         <Text style={globalStyle.body2}>{props.caption}</Text>
+        {!props.status && <View style={styles.notifyIcon} />}
       </View>
     </TouchableOpacity>
   );
@@ -40,5 +41,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     padding: 15,
     paddingBottom: 40,
+    justifyContent: "space-between",
+  },
+  notifyIcon: {
+    width: 8,
+    height: 8,
+    borderRadius: 8,
+    backgroundColor: "red",
   },
 });
