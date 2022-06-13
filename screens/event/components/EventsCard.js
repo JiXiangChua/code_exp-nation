@@ -14,7 +14,7 @@ import globalStyle from "../../../constants/globalStyle";
 
 const Item = ({ item, onPress }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, styles.dropShadow]}>
-    <Image source={item.imageBackground} />
+    <Image style={{ width: "100%" }} source={item.imageBackground} />
     <View style={styles.cardtextContainer}>
       <Text style={[globalStyle.header2]}>{item.title}</Text>
       <Text style={[globalStyle.body1]}>{item.content}</Text>
