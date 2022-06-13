@@ -21,13 +21,13 @@ const Rewards = () => {
   let { rewards } = userProfile;
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <ScrollView>
         <ImageBackground
           style={{ width: "100%" }}
           source={require("../../assets/images/RewardsHeaderBackdrop.png")}
         >
-          <View style={[styles.container]}>
+          <View style={[styles.headerContainer]}>
             <Text style={[globalStyle.header1, styles.pointsText]}>800</Text>
             <Text style={[globalStyle.header4, styles.pointsAvailText]}>
               points available
@@ -43,7 +43,7 @@ const Rewards = () => {
         >
           {filters.map((filter) => {
             return (
-              <TouchableOpacity key={filter}>
+              <TouchableOpacity key={filter} style={styles.buttonBorder}>
                 <Text style={[globalStyle.body1Bold, styles.button]}>
                   {filter}
                 </Text>
@@ -78,10 +78,13 @@ const Rewards = () => {
 
 export default Rewards;
 
-const filters = ["All", "My Rewards", "Popular", "Lifestyles", "Shopping"];
+const filters = ["All", "My Rewards", "Popular", "Lifestyle", "Shopping"];
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: color.OffWhite,
+  },
+  headerContainer: {
     backgroundColor: "transparent",
     height: 185,
   },
@@ -96,20 +99,22 @@ const styles = StyleSheet.create({
     marginLeft: 30,
   },
   buttonContainer: {
-    borderRadius: 10,
     marginTop: 20,
     marginLeft: 10,
   },
   button: {
-    marginHorizontal: 10,
-    backgroundColor: color.White,
-    borderRadius: 10,
-    padding: 5,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+  },
+  buttonBorder: {
+    flexDirection: "column",
+    marginHorizontal: 5,
     borderWidth: 1,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignContent: "center",
+    borderRadius: 10,
     borderColor: color.Emerald,
-    width: 100,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: color.White,
+    width: 110,
   },
 });
