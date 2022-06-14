@@ -36,7 +36,7 @@ const RewardsModal = ({ navigation, route }) => {
         </View>
         <View style={styles.descriptionContainer}>
           <Text style={[globalStyle.header3, styles.descriptionTitle]}>
-            Descriptions
+            Description
           </Text>
           <ScrollView>
             <Text style={[globalStyle.body1]}>{description}</Text>

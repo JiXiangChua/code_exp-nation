@@ -101,7 +101,7 @@ const mockUserProfile = {
       imageBackground: require("../assets/images/events-ippt.png"),
       time: "5 pm - 7 pm",
       location:
-        "Khatib FCC (North), Maju FCC (South), Bedok FCC (East), Kranji FCC (West) Bishan-Ang Mo Kio Park, Marina City Gallery @ Marina BayPunggol Park",
+        "Khatib FCC (North), Maju FCC (South), Bedok FCC (East), Kranji FCC (West) Bishan-Ang Mo Kio Park, Marina City Gallery @ Marina Bay Punggol Park",
       description:
         "The IPPT comprises 3 stations – Push-Ups, Sit-Ups and 2.4km Run. To pass, you need to score a minimum of 1 point in each station, and achieve a total score of at least 51 out of 100 points. The IPPT scoring system is calibrated to your age, and you will receive different incentive awards depending on the total score.",
     },
