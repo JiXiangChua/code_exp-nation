@@ -78,7 +78,7 @@ const mockUserProfile = {
       time: "8 am - 5.30 pm",
       location: "MMRC",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor. Pulvinar etiam non quam lacus. Cursus mattis molestie a iaculis at erat. Elementum tempus egestas sed sed risus pretium. Massa massa ultricies mi quis hendrerit dolor magna eget. Eget arcu dictum varius duis at. At risus viverra adipiscing at in. Quis varius quam quisque id diam. Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis.",
+        "For combat shoot, a team of 6 firers will make up 1 detail. The final score will be the total number of shots added up together. Each firer with get 3 mags of 5 rounds each for both day and night. So each person will shot 15 shots for day and 15 shots for night, total 30 shots per person. So a detail will shoot a combined number of 180 shots, passing is 90 shots, marksman is 144 shots. If u get marksman, everyone in the detail can wear the badge.",
     },
     {
       id: "2",
@@ -91,7 +91,7 @@ const mockUserProfile = {
       location:
         "Khatib FCC (North), Maju FCC (South), Bedok FCC (East), Kranji FCC (West) Bishan-Ang Mo Kio Park, Marina City Gallery @ Marina BayPunggol Park",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor. Pulvinar etiam non quam lacus. Cursus mattis molestie a iaculis at erat. Elementum tempus egestas sed sed risus pretium. Massa massa ultricies mi quis hendrerit dolor magna eget. Eget arcu dictum varius duis at. At risus viverra adipiscing at in. Quis varius quam quisque id diam. Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis.",
+        "The IPPT comprises 3 stations – Push-Ups, Sit-Ups and 2.4km Run. To pass, you need to score a minimum of 1 point in each station, and achieve a total score of at least 51 out of 100 points. The IPPT scoring system is calibrated to your age, and you will receive different incentive awards depending on the total score.",
     },
     {
       id: "3",
@@ -101,21 +101,21 @@ const mockUserProfile = {
       pointsAvailable: "500",
       imageBackground: require("../assets/images/events-wallaby.png"),
       time: "All day",
-      location: "Asutralia",
+      location: "Australia",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor. Pulvinar etiam non quam lacus. Cursus mattis molestie a iaculis at erat. Elementum tempus egestas sed sed risus pretium. Massa massa ultricies mi quis hendrerit dolor magna eget. Eget arcu dictum varius duis at. At risus viverra adipiscing at in. Quis varius quam quisque id diam. Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis.",
+        "Exercise Wallaby is the Singapore Armed Forces' (SAF) largest overseas exercise. This year’s exercise involves about 3,000 personnel and 300 platforms from the Singapore Army and the Republic of Singapore Air Force (RSAF).",
     },
     {
       id: "4",
       title: "Outfield",
-      status: false,
-      content: "3 Days (TBC)",
+      status: true,
+      content: "5/12/2021 - 8/12/2021",
       pointsAvailable: "150",
       imageBackground: require("../assets/images/events-outfield.png"),
       time: "All day",
       location: "Mandai",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor. Pulvinar etiam non quam lacus. Cursus mattis molestie a iaculis at erat. Elementum tempus egestas sed sed risus pretium. Massa massa ultricies mi quis hendrerit dolor magna eget. Eget arcu dictum varius duis at. At risus viverra adipiscing at in. Quis varius quam quisque id diam. Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis.",
+        "Reporting attire of headdress, No.4 uniform and combat boots.  Bring SBO/ LBV. Prepare Field Pack 1-6 as briefed. Soldiers went through 3 days of training in the jungle.",
     },
     {
       id: "5",
@@ -127,7 +127,7 @@ const mockUserProfile = {
       time: "8 am - 5.30 pm",
       location: "School of Commando",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor. Pulvinar etiam non quam lacus. Cursus mattis molestie a iaculis at erat. Elementum tempus egestas sed sed risus pretium. Massa massa ultricies mi quis hendrerit dolor magna eget. Eget arcu dictum varius duis at. At risus viverra adipiscing at in. Quis varius quam quisque id diam. Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis.",
+        "With the primary task of teaching trainees to execute static line parachuting, they introduce the three most important aspects affecting their performance, namely the Exit, the Flight, and the Landing. The need for quick reactive actions during these aspects of the jump required intensive training over a course of 5 days.",
     },
     {
       id: "6",
@@ -137,10 +137,9 @@ const mockUserProfile = {
       pointsAvailable: "50",
       imageBackground: require("../assets/images/events-ippt.png"),
       time: "1 pm - 3 pm",
-      location:
-        "Khatib FCC (North), Maju FCC (South), Bedok FCC (East), Kranji FCC (West) Bishan-Ang Mo Kio Park, Marina City Gallery @ Marina BayPunggol Park",
+      location: "Maju FCC (South)",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor. Pulvinar etiam non quam lacus. Cursus mattis molestie a iaculis at erat. Elementum tempus egestas sed sed risus pretium. Massa massa ultricies mi quis hendrerit dolor magna eget. Eget arcu dictum varius duis at. At risus viverra adipiscing at in. Quis varius quam quisque id diam. Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis.",
+        "The IPPT comprises 3 stations – Push-Ups, Sit-Ups and 2.4km Run. To pass, you need to score a minimum of 1 point in each station, and achieve a total score of at least 51 out of 100 points. The IPPT scoring system is calibrated to your age, and you will receive different incentive awards depending on the total score.",
     },
   ],
   rewards: [
