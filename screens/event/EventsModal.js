@@ -56,12 +56,14 @@ const EventsModal = ({ navigation, route }) => {
         </View>
       </View>
       <View style={styles.buttonContaier}>
-        <GenericButton
-          title="Complete"
-          color={color.Emerald}
-          backgroundColor={color.White}
-          onPress={() => navigation.goBack()}
-        />
+        {!status && (
+          <GenericButton
+            title="Complete"
+            color={color.Emerald}
+            backgroundColor={color.White}
+            onPress={() => navigation.goBack()}
+          />
+        )}
       </View>
     </SafeAreaView>
   );
