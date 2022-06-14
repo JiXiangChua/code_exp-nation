@@ -18,7 +18,7 @@ import RewardsCard from "./components/RewardsCard";
 
 const Rewards = () => {
   const { userProfile } = useContext(LoginContext);
-  let { rewards } = userProfile;
+  let { rewards, earnedRewardPoints } = userProfile;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -28,7 +28,9 @@ const Rewards = () => {
           source={require("../../assets/images/RewardsHeaderBackdrop.png")}
         >
           <View style={[styles.headerContainer]}>
-            <Text style={[globalStyle.header1, styles.pointsText]}>800</Text>
+            <Text style={[globalStyle.header1, styles.pointsText]}>
+              {earnedRewardPoints}
+            </Text>
             <Text style={[globalStyle.header4, styles.pointsAvailText]}>
               points available
             </Text>

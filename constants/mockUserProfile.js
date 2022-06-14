@@ -1,6 +1,7 @@
 const mockUserProfile = {
   name: "DERRICK LIM",
   nric: "S1234567Z",
+  earnedRewardPoints: "910",
   licenses: [
     {
       type: "Identity",

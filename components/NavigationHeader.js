@@ -24,7 +24,7 @@ const NavigationHeader = (props) => {
               { color: color.White, paddingLeft: 10 },
             ]}
           >
-            800 points
+            {props.earnedPoints} points
           </Text>
         </TouchableOpacity>
       )}

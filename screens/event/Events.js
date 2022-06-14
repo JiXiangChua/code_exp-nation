@@ -18,7 +18,7 @@ const filterTabArray = [
 
 const Events = ({ navigation }) => {
   const { userProfile } = useContext(LoginContext);
-  const { events } = userProfile;
+  const { events, earnedRewardPoints } = userProfile;
 
   const [filteredEvents, setFilteredEvents] = useState(events);
   const [filterStatus, setFilterStatus] = useState(false); //false - show on-going, true - show completed
@@ -65,6 +65,7 @@ const Events = ({ navigation }) => {
         iconName="md-gift"
         iconSize={30}
         onPress={() => navigation.navigate("Rewards")}
+        earnedPoints={earnedRewardPoints}
       />
       <FilterTab
         array={filterTabArray}
