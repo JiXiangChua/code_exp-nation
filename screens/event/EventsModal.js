@@ -2,7 +2,6 @@ import {
   View,
   Text,
   StyleSheet,
-  TouchableOpacity,
   SafeAreaView,
   Platform,
   Image,
@@ -11,28 +10,25 @@ import color from "../../constants/color";
 import globalStyle from "../../constants/globalStyle";
 
 const EventsModal = ({ route }) => {
-  //can pass the data using routes.
-  console.log(route.params.data); //to pull out data from here
-
   const {
     id,
-    imageModalBackground,
-    imageModalCalendar,
-    imageModalTime,
-    imageModalLocation,
     status,
     title,
     content,
     time,
     location,
     description,
+    imageBackground,
   } = route.params.data;
+
+  const imageModalCalendar = require("../../assets/images/eventsmodal-calendar.png");
+  const imageModalTime = require("../../assets/images/eventsmodal-time.png");
+  const imageModalLocation = require("../../assets/images/eventsmodal-location.png");
 
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity style={styles.goBackBar} />
       <View style={styles.imageContainer}>
-        <Image style={styles.image} source={imageModalBackground} />
+        <Image style={styles.image} source={imageBackground} />
       </View>
       <Text style={[globalStyle.header1, styles.titleText]}>{title}</Text>
       <View style={styles.infoContainer}>
@@ -63,14 +59,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: Platform.OS === "android" ? 30 : 0,
-  },
-  goBackBar: {
-    backgroundColor: color.Grey400,
-    width: 160,
-    height: 8,
-    borderRadius: 50,
-    alignSelf: "center",
-    marginVertical: 10,
   },
   imageContainer: {
     paddingBottom: 20,
