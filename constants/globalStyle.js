@@ -52,6 +52,13 @@ const globalStyle = StyleSheet.create({
   androidNavigationTitle: {
     paddingTop: Platform.OS === "android" ? 50 : 0,
   },
+  dropShadow: {
+    shadowColor: "black",
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 4, height: 4 },
+    shadowRadius: 3,
+    elevation: 3,
+  },
 });
 
 export default globalStyle;

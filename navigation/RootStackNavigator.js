@@ -6,6 +6,8 @@ import { MissionContext } from "../store/context/mission-context";
 import Login from "../screens/login/Login";
 import MainTabNavigator from "./MainTabNavigator";
 import MissionHome from "../screens/mission/home/MissionHome";
+import Compass from "../screens/mission/compass/Compass";
+import GroupScreen from "../screens/mission/group/GroupScreen";
 
 const Stack = createStackNavigator();
 
@@ -29,11 +31,46 @@ const RootStackNavigator = () => {
       >
         {!isLogin && <Stack.Screen name="Login" component={Login} />}
         {isLogin && isMissionMode && (
-          <Stack.Screen
-            name="Mission"
-            component={MissionHome}
-            options={{ cardStyleInterpolator: forFade }}
-          />
+          <Stack.Group>
+            <Stack.Screen
+              name="Mission"
+              component={MissionHome}
+              options={{
+                cardStyleInterpolator: forFade,
+                gestureEnabled: false,
+              }}
+            />
+            <Stack.Screen
+              name="Compass"
+              component={Compass}
+              options={{
+                cardStyleInterpolator: forFade,
+                headerShown: true,
+                title: "",
+                headerStyle: {
+                  backgroundColor: "black",
+                },
+                headerShadowVisible: false,
+                headerTintColor: "white",
+                headerBackTitleVisible: false,
+              }}
+            />
+            <Stack.Screen
+              name="Group"
+              component={GroupScreen}
+              options={{
+                cardStyleInterpolator: forFade,
+                headerShown: true,
+                title: "",
+                headerStyle: {
+                  backgroundColor: "black",
+                },
+                headerShadowVisible: false,
+                headerTintColor: "white",
+                headerBackTitleVisible: false,
+              }}
+            />
+          </Stack.Group>
         )}
         {isLogin && (
           <Stack.Screen

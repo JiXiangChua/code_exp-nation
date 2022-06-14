@@ -27,7 +27,7 @@ const MissionModeHeader = () => {
     <View style={styles.missionContainer}>
       <Text style={[globalStyle.header4, styles.label]}>MISSION MODE</Text>
       <Switch
-        trackColor={{ false: color.Grey400, true: color.White }}
+        trackColor={{ false: color.Grey400, true: "#879072" }}
         thumbColor={isMissionMode ? color.Black : color.White}
         ios_backgroundColor={color.Grey400}
         value={isMissionMode}

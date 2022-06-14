@@ -1,8 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import Inbox from "../screens/inbox/Inbox";
-import globalStyle from "../constants/globalStyle";
-import color from "../constants/color";
-import IconButton from "../components/IconButton";
 
 const Stack = createStackNavigator();
 

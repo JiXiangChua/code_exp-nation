@@ -1,6 +1,8 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import Events from "../screens/event/Events";
 import Rewards from "../screens/rewards/Rewards";
+import EventsModal from "../screens/event/EventsModal";
+import RewardsModal from "../screens/rewards/RewardsModal";
 import color from "../constants/color";
 
 const Stack = createStackNavigator();
@@ -20,10 +22,27 @@ const EventsStack = () => {
           headerShown: true,
           title: "",
           headerStyle: {
-            backgroundColor: color.Grey200,
+            backgroundColor: color.OffWhite,
           },
+          headerTintColor: color.Emerald,
         }}
       />
+      <Stack.Group screenOptions={{ presentation: "modal" }}>
+        <Stack.Screen
+          name="EventsModal"
+          component={EventsModal}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="RewardsModal"
+          component={RewardsModal}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </Stack.Group>
     </Stack.Navigator>
   );
 };

@@ -3,6 +3,7 @@ import HomeStack from "./HomeStack";
 import InboxStack from "./InboxStack";
 import EventsStack from "./EventsStack";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { store } from "../store/redux/store";
 
 import color from "../constants/color";
 
@@ -43,7 +44,8 @@ const MainTabNavigator = ({ navigation }) => {
         component={InboxStack}
         options={{
           title: "Inbox",
-          tabBarBadge: 1,
+          //tabBarBadge: 1,
+          //tabBarBadge: store.getState().unreadMails.numberOfUnreadMails,
         }}
       />
       <Tab.Screen

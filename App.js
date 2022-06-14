@@ -1,8 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import RootStackNavigator from "./navigation/RootStackNavigator";
 import { useFonts } from "expo-font";
+import { Provider } from "react-redux";
 import LoginContextProvider from "./store/context/login-context";
 import MissionContextProvider from "./store/context/mission-context";
+import { store } from "./store/redux/store";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -22,9 +24,11 @@ export default function App() {
     <>
       <StatusBar style="auto" />
       <LoginContextProvider>
-        <MissionContextProvider>
-          <RootStackNavigator />
-        </MissionContextProvider>
+        <Provider store={store}>
+          <MissionContextProvider>
+            <RootStackNavigator />
+          </MissionContextProvider>
+        </Provider>
       </LoginContextProvider>
     </>
   );
