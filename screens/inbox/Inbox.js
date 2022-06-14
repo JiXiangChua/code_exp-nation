@@ -7,12 +7,14 @@ import {
   FlatList,
   Platform,
 } from "react-native";
+import { useSelector, useDispatch } from "react-redux";
 import { LoginContext } from "../../store/context/login-context";
 import globalStyle from "../../constants/globalStyle";
 import color from "../../constants/color";
 import NavigationHeader from "../../components/NavigationHeader";
 import FilterTab from "../../components/FilterTab";
 import MailCard from "./components/MailCard";
+import { refreshNumberOfUnreadMails } from "../../store/redux/unreadMails-slice";
 
 const filterTab = [
   {
@@ -30,19 +32,27 @@ const Inbox = () => {
   const [filterStatus, setFilterStatus] = useState(false); //false - show all mail, true - show unread only
   const [showSearchBar, setShowSearchBar] = useState(false);
 
+  const dispatch = useDispatch();
+  const numberOfUnreadMails = useSelector(
+    (state) => state.unreadMails.numberOfUnreadMails
+  );
+
   const setFilterStatusHandler = (status) => {
     setFilterStatus(status);
   };
 
   const renderMailsOnReadStatus = () => {
+    let filtered = mails.filter((mail) => {
+      return mail.status === false;
+    });
     if (filterStatus) {
-      let filtered = mails.filter((mail) => {
-        return mail.status === false;
-      });
       setFilteredMails(filtered);
     } else {
       setFilteredMails(mails);
     }
+    dispatch(
+      refreshNumberOfUnreadMails({ numberOfUnreadMails: filtered.length })
+    );
   };
 
   useEffect(() => {
