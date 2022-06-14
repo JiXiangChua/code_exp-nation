@@ -27,14 +27,19 @@ const Events = ({ navigation }) => {
     setFilterStatus(status);
   };
 
+  let filtered;
+
   const renderEventsOnCompletedStatus = () => {
     if (filterStatus) {
-      let filtered = events.filter((event) => {
+      filtered = events.filter((event) => {
         return event.status === true;
       });
       setFilteredEvents(filtered);
     } else {
-      setFilteredEvents(events);
+      filtered = events.filter((event) => {
+        return event.status === false;
+      });
+      setFilteredEvents(filtered);
     }
   };
 
