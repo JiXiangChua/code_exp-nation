@@ -1,6 +1,8 @@
 # NationLah
 This project is build for the BrainHack code exp 2022 Hackathon
 
+![NationLah App Overview](/assets/images/App_Overview.png)
+
 # Installation:
 > First, clone down the proejct to your local directory and cd into it.
 ```
