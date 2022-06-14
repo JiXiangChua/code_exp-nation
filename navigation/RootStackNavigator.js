@@ -35,7 +35,10 @@ const RootStackNavigator = () => {
             <Stack.Screen
               name="Mission"
               component={MissionHome}
-              options={{ cardStyleInterpolator: forFade }}
+              options={{
+                cardStyleInterpolator: forFade,
+                gestureEnabled: false,
+              }}
             />
             <Stack.Screen
               name="Compass"
