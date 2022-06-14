@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import {
   SafeAreaView,
   View,
@@ -6,16 +7,39 @@ import {
   TextInput,
   FlatList,
 } from "react-native";
+import { LoginContext } from "../../../store/context/login-context";
 import color from "../../../constants/color";
 import globalStyle from "../../../constants/globalStyle";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
 
 const GroupScreen = () => {
+  const { userProfile } = useContext(LoginContext);
+  const { platoon, section, sectionlist } = userProfile;
+
+  const sectionList = sectionlist;
+
+  const namesAsObject = sectionList.map((name) => {
+    return {
+      name: name,
+    };
+  });
+
+  const renderItem = ({ item }) => {
+    return (
+      <View style={styles.namesSmallContainer}>
+        <FontAwesome name="user-circle-o" size={35} color="white" />
+        <Text style={[globalStyle.body1, styles.namesText]}>
+          {item.name.toUpperCase()}
+        </Text>
+      </View>
+    );
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.sectionContainer}>
         <Text style={[globalStyle.header3, styles.sectionText]}>
-          Plat 1 : Sect 1
+          Plat {platoon} : Sect {section}
         </Text>
       </View>
 
@@ -49,31 +73,6 @@ const GroupScreen = () => {
 
 export default GroupScreen;
 
-const sectionList = [
-  "Derrick Lim",
-  "Desmond Tan",
-  "Rachel Kwek",
-  "Tey Kai Li",
-  "Ophelia Liang",
-  "Chua Ji Xiang",
-];
-
-const namesAsObject = sectionList.map((name) => {
-  return {
-    name: name,
-  };
-});
-
-const renderItem = ({ item }) => {
-  return (
-    <View style={styles.namesSmallContainer}>
-      <FontAwesome name="user-circle-o" size={35} color="white" />
-      <Text style={[globalStyle.body1, styles.namesText]}>
-        {item.name.toUpperCase()}
-      </Text>
-    </View>
-  );
-};
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -2,6 +2,17 @@ const mockUserProfile = {
   name: "DERRICK LIM",
   nric: "S1234567Z",
   earnedRewardPoints: "910",
+  company: "Dragon",
+  platoon: "1",
+  section: "1",
+  sectionlist: [
+    "Derrick Lim",
+    "Desmond Tan",
+    "Rachel Kwek",
+    "Tey Kai Li",
+    "Ophelia Liang",
+    "Chua Ji Xiang",
+  ],
   licenses: [
     {
       type: "Identity",

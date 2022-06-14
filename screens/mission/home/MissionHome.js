@@ -1,21 +1,26 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {
+  Text,
   View,
   SafeAreaView,
   StyleSheet,
   TextInput,
   TouchableOpacity,
 } from "react-native";
+import { LoginContext } from "../../../store/context/login-context";
 import { StatusBar } from "expo-status-bar";
 import { Ionicons } from "@expo/vector-icons";
 import color from "../../../constants/color";
 import globalStyle from "../../../constants/globalStyle";
+import { FontAwesome } from "@expo/vector-icons";
 
 import MissionModeHeader from "../../../components/MissionModeHeader";
 import PressToTalkButton from "../voice/PressToTalkButton";
 import TalkingButton from "../voice/TalkingButton";
 
 const MissionHome = ({ navigation }) => {
+  const { userProfile } = useContext(LoginContext);
+  const { sectionlist } = userProfile;
   const [talking, setTalking] = useState(false);
 
   const goToCompass = () => {
@@ -30,16 +35,22 @@ const MissionHome = ({ navigation }) => {
       >
         <MissionModeHeader />
         <View style={styles.frequencyContainer}>
-          <TextInput style={styles.textInput} placeholder="Enter Frequency" />
-          <TouchableOpacity
-            style={{
-              width: 40,
-              height: 40,
-              borderRadius: 40,
-              backgroundColor: "white",
-            }}
-            onPress={() => navigation.navigate("Group")}
+          <TextInput
+            style={styles.textInput}
+            placeholder="Enter Frequency"
+            keyboardType="numeric"
           />
+          <TouchableOpacity onPress={() => navigation.navigate("Group")}>
+            <FontAwesome name="users" size={24} color="white" />
+            <Text
+              style={[
+                globalStyle.header4,
+                { color: "white", textAlign: "center" },
+              ]}
+            >
+              {sectionlist.length}
+            </Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity
