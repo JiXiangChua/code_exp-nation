@@ -8,8 +8,8 @@ const RewardsCategory = (props) => {
   const { category, data } = props;
   const navigation = useNavigation();
 
-  const goToRewardsDetailModal = () => {
-    navigation.navigate("RewardsModal", { data: data });
+  const goToRewardsDetailModal = (item) => {
+    navigation.navigate("RewardsModal", { data: item });
   };
 
   return (
@@ -27,7 +27,7 @@ const RewardsCategory = (props) => {
               points={item.points}
               imageBackground={item.imageBackground}
               id={item.id}
-              onPress={goToRewardsDetailModal}
+              onPress={goToRewardsDetailModal.bind(this, item)}
             />
           );
         }}

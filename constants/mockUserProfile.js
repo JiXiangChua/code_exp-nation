@@ -148,11 +148,17 @@ const mockUserProfile = {
       data: [
         {
           id: "1",
-          title: "$10 Safra Voucher",
+          title: "$10 SAFRA Voucher",
           status: false,
           content: "For more info...",
           points: "1,500 points ",
           imageBackground: require("../assets/images/rewards-Safra.png"),
+          imageModalBackground: require("../assets/images/rewardsmodal-Safra.png"),
+          date: "Monday - Sunday",
+          location:
+            "SAFRA Mount Faber, SAFRA Jurong, SAFRA Tampines, SAFRA Toa Payoh, SAFRA Yishun, SAFRA Punggol",
+          description:
+            "You can use your SAFRA Rewards Vouchers at the following list of stores arranged by club/category. Terms and conditions apply. The voucher’s validity period is 6 months from the date of issue. List of stores is accurate as of 01 Jan 2022 (and may subject to change without prior notice). You may call 1800 377 9800 or email to safrapoints@safra.sg if you have further enquiries.",
         },
       ],
     },
@@ -161,11 +167,17 @@ const mockUserProfile = {
       data: [
         {
           id: "1",
-          title: "$10 Safra Voucher",
+          title: "$10 SAFRA Voucher",
           status: false,
           content: "For more info...",
           points: "1,500 points ",
           imageBackground: require("../assets/images/rewards-Safra.png"),
+          imageModalBackground: require("../assets/images/rewardsmodal-Safra.png"),
+          date: "Monday - Sunday",
+          location:
+            "SAFRA Mount Faber, SAFRA Jurong, SAFRA Tampines, SAFRA Toa Payoh, SAFRA Yishun, SAFRA Punggol",
+          description:
+            "You can use your SAFRA Rewards Vouchers at the following list of stores arranged by club/category. Terms and conditions apply. The voucher’s validity period is 6 months from the date of issue. List of stores is accurate as of 01 Jan 2022 (and may subject to change without prior notice). You may call 1800 377 9800 or email to safrapoints@safra.sg if you have further enquiries.",
         },
         {
           id: "2",
@@ -174,6 +186,11 @@ const mockUserProfile = {
           content: "For more info...",
           points: "1,500 points ",
           imageBackground: require("../assets/images/rewards-Chevrons.png"),
+          imageModalBackground: require("../assets/images/rewardsmodal-Chevrons.png"),
+          date: "Monday - Friday",
+          location: "48 Boon Lay Way, Singapore 609961",
+          description:
+            "A four-storey clubhouse, previously known as the NCO Club, built to provide leisure and recreational facilities for SAF Warrant Officers, Specialists, Military Experts, and their families. We have numerous facilities to cater to the interests and needs of our members, such as function rooms, karaoke, lounge, spa, gym, chalets, swimming pool, etc.",
         },
         {
           id: "3",
@@ -182,6 +199,12 @@ const mockUserProfile = {
           content: "For more info...",
           points: "1,500 points ",
           imageBackground: require("../assets/images/rewards-HomeTeamNS.png"),
+          imageModalBackground: require("../assets/images/rewardsmodal-HomeTeamNS.png"),
+          date: "Monday - Friday",
+          location:
+            "Balestier, Bedok, Bukit Batok, Chinatown, Khatib, Tampines",
+          description:
+            "Whether it’s arts and culture, sports or entertainment, you’ll find what you’re looking for in our list of exciting happenings all-year round! From fitness classes, workshops to festive events and more — HomeTeamNS is your one-stop hub to learn something new or simply have fun and enjoy yourself! ",
         },
       ],
     },
@@ -196,6 +219,11 @@ const mockUserProfile = {
           content: "For more info...",
           points: "11,250 points ",
           imageBackground: require("../assets/images/rewards-2D1NChalet.png"),
+          imageModalBackground: require("../assets/images/rewardsmodal-2D1NChalet.png"),
+          date: "Monday - Friday",
+          location: "48 Boon Lay Way, Singapore 609961",
+          description:
+            "Our double-storey chalet unit. To make a booking for our chalet facilities, please contact our reception at 6668 8896 or email mro@chevrons.org.sg.",
         },
         {
           id: "2",
@@ -204,6 +232,11 @@ const mockUserProfile = {
           content: "For more info...",
           points: "11,250 points ",
           imageBackground: require("../assets/images/rewards-FitnessWorkz.png"),
+          imageModalBackground: require("../assets/images/rewardsmodal-FitnessWorkz.png"),
+          date: "Monday - Friday",
+          location: " Balestier, Bukit Batok, Khatib",
+          description:
+            "One of the best ways to kick start your day is a quick workout session! HomeTeamNS Fitness Workz gym opens at 7am daily, providing you with premium equipment and facilities to complete your workout routine. Power up your fitness at Fitness Workz Balestier and sign up for our gym membership today!",
         },
         {
           id: "3",
@@ -212,6 +245,11 @@ const mockUserProfile = {
           content: "For more info...",
           points: "4,500 points ",
           imageBackground: require("../assets/images/rewards-AdventureHQPass.png"),
+          imageModalBackground: require("../assets/images/rewardsmodal-AdventureHQPass.png"),
+          date: "Monday - Thursday",
+          location: "HomeTeamNS Khatib Level 1, 2 Yishun Walk Singapore 767944",
+          description:
+            "Are you bold enough to defy gravity and conquer obstacles ahead of you? Adventure seekers, look no further! Head to Adventure HQ at HomeTeamNS Khatib — the first and largest multi-installation indoor playground in Singapore!",
         },
       ],
     },
@@ -225,22 +263,39 @@ const mockUserProfile = {
           content: "For more info...",
           points: "4,500 points ",
           imageBackground: require("../assets/images/rewards-AdventureHQPass.png"),
+          imageModalBackground: require("../assets/images/rewardsmodal-AdventureHQPass.png"),
+          date: "Monday - Thursday",
+          location: "HomeTeamNS Khatib Level 1, 2 Yishun Walk Singapore 767944",
+          description:
+            "Are you bold enough to defy gravity and conquer obstacles ahead of you? Adventure seekers, look no further! Head to Adventure HQ at HomeTeamNS Khatib — the first and largest multi-installation indoor playground in Singapore!",
         },
         {
           id: "2",
-          title: "2Hr Indoor Badminton Court at Safra",
+          title: "2Hr Indoor Badminton Court at SAFRA",
           status: false,
           content: "For more info...",
           points: "500 points ",
           imageBackground: require("../assets/images/rewards-BadmintonCourt.png"),
+          imageModalBackground: require("../assets/images/rewardsmodal-BadmintonCourt.png"),
+          date: "Monday - Sunday",
+          location:
+            "SAFRA Mount Faber, SAFRA Jurong, SAFRA Tampines, SAFRA Toa Payoh, SAFRA Yishun, SAFRA Punggol",
+          description:
+            "You can use your SAFRA Rewards Vouchers at the following list of stores arranged by club/category. Terms and conditions apply. The voucher’s validity period is 6 months from the date of issue. List of stores is accurate as of 01 Jan 2022 (and may subject to change without prior notice). You may call 1800 377 9800 or email to safrapoints@safra.sg if you have further enquiries.",
         },
         {
           id: "3",
-          title: "SuperBowl at Safra",
+          title: "SuperBowl at SAFRA",
           status: false,
           content: "For more info...",
           points: "1,000 points ",
           imageBackground: require("../assets/images/rewards-SuperBowl.png"),
+          imageModalBackground: require("../assets/images/rewardsmodal-SuperBowl.png"),
+          date: "Monday - Sunday",
+          location:
+            "SAFRA Mount Faber, SAFRA Jurong, SAFRA Tampines, SAFRA Toa Payoh, SAFRA Yishun, SAFRA Punggol",
+          description:
+            "You can use your SAFRA Rewards Vouchers at the following list of stores arranged by club/category. Terms and conditions apply. The voucher’s validity period is 6 months from the date of issue. List of stores is accurate as of 01 Jan 2022 (and may subject to change without prior notice). You may call 1800 377 9800 or email to safrapoints@safra.sg if you have further enquiries.",
         },
       ],
     },
