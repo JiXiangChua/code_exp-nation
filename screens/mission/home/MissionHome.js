@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import {
   Text,
   View,
@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  BackHandler,
 } from "react-native";
 import { LoginContext } from "../../../store/context/login-context";
 import { StatusBar } from "expo-status-bar";
@@ -26,6 +27,14 @@ const MissionHome = ({ navigation }) => {
   const goToCompass = () => {
     navigation.navigate("Compass");
   };
+
+  useEffect(() => {
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      () => true
+    );
+    return () => backHandler.remove();
+  }, []);
 
   return (
     <View style={styles.container}>
