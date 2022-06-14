@@ -75,6 +75,10 @@ const mockUserProfile = {
       content: "31/01/2023 - 15/01/2023",
       pointsAvailable: "50",
       imageBackground: require("../assets/images/events-combatshoot.png"),
+      time: "8 am - 5.30 pm",
+      location: "MMRC",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor. Pulvinar etiam non quam lacus. Cursus mattis molestie a iaculis at erat. Elementum tempus egestas sed sed risus pretium. Massa massa ultricies mi quis hendrerit dolor magna eget. Eget arcu dictum varius duis at. At risus viverra adipiscing at in. Quis varius quam quisque id diam. Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis.",
     },
     {
       id: "2",
@@ -83,10 +87,11 @@ const mockUserProfile = {
       content: "01/ 05/ 2023 - 31/05/2023",
       pointsAvailable: "50",
       imageBackground: require("../assets/images/events-ippt.png"),
-      time: "10 am - 5 pm",
+      time: "5 pm - 7 pm",
       location:
         "Khatib FCC (North), Maju FCC (South), Bedok FCC (East), Kranji FCC (West) Bishan-Ang Mo Kio Park, Marina City Gallery @ Marina BayPunggol Park",
-      description: "NIL",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor. Pulvinar etiam non quam lacus. Cursus mattis molestie a iaculis at erat. Elementum tempus egestas sed sed risus pretium. Massa massa ultricies mi quis hendrerit dolor magna eget. Eget arcu dictum varius duis at. At risus viverra adipiscing at in. Quis varius quam quisque id diam. Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis.",
     },
     {
       id: "3",
@@ -95,6 +100,10 @@ const mockUserProfile = {
       content: "22/09/2023 - 21/10/2023",
       pointsAvailable: "500",
       imageBackground: require("../assets/images/events-wallaby.png"),
+      time: "All day",
+      location: "Asutralia",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor. Pulvinar etiam non quam lacus. Cursus mattis molestie a iaculis at erat. Elementum tempus egestas sed sed risus pretium. Massa massa ultricies mi quis hendrerit dolor magna eget. Eget arcu dictum varius duis at. At risus viverra adipiscing at in. Quis varius quam quisque id diam. Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis.",
     },
     {
       id: "4",
@@ -103,6 +112,10 @@ const mockUserProfile = {
       content: "3 Days (TBC)",
       pointsAvailable: "150",
       imageBackground: require("../assets/images/events-outfield.png"),
+      time: "All day",
+      location: "Mandai",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor. Pulvinar etiam non quam lacus. Cursus mattis molestie a iaculis at erat. Elementum tempus egestas sed sed risus pretium. Massa massa ultricies mi quis hendrerit dolor magna eget. Eget arcu dictum varius duis at. At risus viverra adipiscing at in. Quis varius quam quisque id diam. Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis.",
     },
     {
       id: "5",
@@ -111,6 +124,10 @@ const mockUserProfile = {
       content: "5 Days (TBC)",
       pointsAvailable: "1000",
       imageBackground: require("../assets/images/events-parachute.png"),
+      time: "8 am - 5.30 pm",
+      location: "School of Commando",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor. Pulvinar etiam non quam lacus. Cursus mattis molestie a iaculis at erat. Elementum tempus egestas sed sed risus pretium. Massa massa ultricies mi quis hendrerit dolor magna eget. Eget arcu dictum varius duis at. At risus viverra adipiscing at in. Quis varius quam quisque id diam. Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis.",
     },
     {
       id: "6",
@@ -119,6 +136,11 @@ const mockUserProfile = {
       content: "23/04/2022",
       pointsAvailable: "50",
       imageBackground: require("../assets/images/events-ippt.png"),
+      time: "1 pm - 3 pm",
+      location:
+        "Khatib FCC (North), Maju FCC (South), Bedok FCC (East), Kranji FCC (West) Bishan-Ang Mo Kio Park, Marina City Gallery @ Marina BayPunggol Park",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor. Pulvinar etiam non quam lacus. Cursus mattis molestie a iaculis at erat. Elementum tempus egestas sed sed risus pretium. Massa massa ultricies mi quis hendrerit dolor magna eget. Eget arcu dictum varius duis at. At risus viverra adipiscing at in. Quis varius quam quisque id diam. Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis.",
     },
   ],
   rewards: [

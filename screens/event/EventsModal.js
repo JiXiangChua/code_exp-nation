@@ -5,11 +5,17 @@ import {
   SafeAreaView,
   Platform,
   Image,
+  ScrollView,
 } from "react-native";
 import color from "../../constants/color";
 import globalStyle from "../../constants/globalStyle";
+import GenericButton from "../../components/GenericButton";
 
-const EventsModal = ({ route }) => {
+const imageModalCalendar = require("../../assets/images/eventsmodal-calendar.png");
+const imageModalTime = require("../../assets/images/eventsmodal-time.png");
+const imageModalLocation = require("../../assets/images/eventsmodal-location.png");
+
+const EventsModal = ({ navigation, route }) => {
   const {
     id,
     status,
@@ -21,33 +27,41 @@ const EventsModal = ({ route }) => {
     imageBackground,
   } = route.params.data;
 
-  const imageModalCalendar = require("../../assets/images/eventsmodal-calendar.png");
-  const imageModalTime = require("../../assets/images/eventsmodal-time.png");
-  const imageModalLocation = require("../../assets/images/eventsmodal-location.png");
-
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image style={styles.image} source={imageBackground} />
+      <View style={{ flex: 9, overflow: "hidden" }}>
+        <View style={styles.imageContainer}>
+          <Image style={styles.image} source={imageBackground} />
+        </View>
+        <Text style={[globalStyle.header1, styles.titleText]}>{title}</Text>
+        <View style={styles.infoContainer}>
+          <Image style={styles.infoIcon} source={imageModalCalendar} />
+          <Text style={[globalStyle.header4, styles.infoText]}>{content}</Text>
+        </View>
+        <View style={styles.infoContainer}>
+          <Image style={styles.infoIcon} source={imageModalTime} />
+          <Text style={[globalStyle.header4, styles.infoText]}>{time}</Text>
+        </View>
+        <View style={styles.locationContainer}>
+          <Image style={styles.infoIcon} source={imageModalLocation} />
+          <Text style={[globalStyle.header4, styles.infoText]}>{location}</Text>
+        </View>
+        <View style={styles.descriptionContainer}>
+          <Text style={[globalStyle.header3, styles.descriptionTitle]}>
+            Descriptions
+          </Text>
+          <ScrollView>
+            <Text style={[globalStyle.body1]}>{description}</Text>
+          </ScrollView>
+        </View>
       </View>
-      <Text style={[globalStyle.header1, styles.titleText]}>{title}</Text>
-      <View style={styles.infoContainer}>
-        <Image style={styles.infoIcon} source={imageModalCalendar} />
-        <Text style={[globalStyle.header4, styles.infoText]}>{content}</Text>
-      </View>
-      <View style={styles.infoContainer}>
-        <Image style={styles.infoIcon} source={imageModalTime} />
-        <Text style={[globalStyle.header4, styles.infoText]}>{time}</Text>
-      </View>
-      <View style={styles.locationContainer}>
-        <Image style={styles.infoIcon} source={imageModalLocation} />
-        <Text style={[globalStyle.header4, styles.infoText]}>{location}</Text>
-      </View>
-      <View style={styles.descriptionContainer}>
-        <Text style={[globalStyle.header3, styles.descriptionTitle]}>
-          Descriptions
-        </Text>
-        <Text style={[globalStyle.body1]}>{description}</Text>
+      <View style={styles.buttonContaier}>
+        <GenericButton
+          title="Complete"
+          color={color.Emerald}
+          backgroundColor={color.White}
+          onPress={() => navigation.goBack()}
+        />
       </View>
     </SafeAreaView>
   );
@@ -68,6 +82,7 @@ const styles = StyleSheet.create({
     width: "90%",
     justifyContent: "center",
     alignSelf: "center",
+    borderRadius: 5,
   },
   titleText: {
     color: color.Emerald,
@@ -97,5 +112,10 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginVertical: 10,
     marginRight: 20,
+  },
+  buttonContaier: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-around",
   },
 });
